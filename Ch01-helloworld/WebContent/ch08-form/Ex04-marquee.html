@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>마퀴 태그</title>
+<!-- 
+<marquee>
+ - <marquee></marquee> 사이에 있는 내용이 움직이면서 보여줍니다.
+ - 제한된 공간에서 많은 내용을 보여 주어야할 경우에도 사용
+ -->
+</head>
+<body>
+<!--
+ direction 속성
+  - 움직이는 방향을 지정
+  - left, right, up, down
+ -->
+ <marquee direction="right">오른쪽 방향으로 움직입니다.</marquee>
+ <marquee direction="left">왼쪽 방향으로 움직입니다.</marquee>
+ <marquee direction="up" height="100">
+ 	위쪽 방향으로 움직입니다.</marquee>
+ <marquee direction="down" height="100">
+ 	아래쪽 방향으로 움직입니다.</marquee>
+ 
+<!--
+behavior 속성
+ - 컨텐츠가 어떻게 스크롤 될것인지를 지정
+  
+
+scroll		기본값, marquee영역의 경계에서부터 스크롤됩니다.
+slide		marquee영역의 경계에서 더 이상 움직이지 않습니다.
+alternate	marquee영역의 경계까지 왔다 갔다하면서 화면상에 출력됩니다.
+ --> 
+ <br><br><br>
+ <marquee behavior="scroll">behavior="scroll"</marquee>
+ <marquee behavior="slide">behavior="slide"</marquee>
+ <marquee behavior="alternate">behavior="alternate"</marquee>
+ 
+ 
+ <br><br><br>
+<!--
+scrollamount 속성
+ - 한번 이동할 때마다 얼마만큼 움직일지 지정
+ - 기본값 1pixel  
+ --> 
+ <marquee scrollamount="20">scrollamount="20" 픽셀로 지정</marquee>
+ <marquee scrollamount="100">scrollamount="100" 픽셀로 지정</marquee>
+
+<br><br><br>
+<!--  
+ scrolldelay 속성
+ - 지연시간 설정
+ - 숫자가 커질수록 느려지며, 단위는 밀리초(ms, 1/1000)
+ --> 
+ 
+ <marquee scrolldelay="1500">
+ 	1.5초의 지연이 발생하고 있습니다.</marquee>
+ 	
+<br><br><br>
+<!--
+loop 속성
+ - 반복 횟수를 지정
+ - 기본값 -1(무한반복, infinite) 
+ --> 
+ <marquee loop="2">loop="2"로 속성 지정</marquee>
+ 
+<br><br><br>
+<!-- 
+bgcolor 속성
+ - 배경색 지정
+ -->
+  <marquee bgcolor="pink">남자의 색 ~ 핑크</marquee>
+<br><br><br>
+<marquee direction="right" scrollamount="1">__@/``</marquee>  
+<br><br><br>
+<marquee width="500"> ←♥--<< </marquee><font size="5">{></font>
+  
+</body>
+</html>
+
+
+
+
+

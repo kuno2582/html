@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<!-- 
+<source>
+ - 여러 미디어 자원을 지정할 때 사용
+ - 브라우저별 미디어타입이나 코덱지원에 따라 재생할 수 비디오 파일이 달라집니다.
+  다양한 멀티미디어 파일의 포멧을 지원할 수 있도록 하기위해서 사용해 줍니다.
+ - <video>, <audio>동일하게 사용
+
+
+format	MIME-type
+mp4		video/mp4
+ogg		video/ogg
+webm	video/webm
+ -->
+</head>
+<body>
+	<video width="1000" controls poster="video/poster.jpg">
+		<source src="video/video04.mp4" type="video/mp4"></source>
+		<source src="video/video04.ogg" type="video/ogg"></source>
+		<source src="video/video04.webm" type="video/webm"></source>
+	</video>
+
+</body>
+</html>

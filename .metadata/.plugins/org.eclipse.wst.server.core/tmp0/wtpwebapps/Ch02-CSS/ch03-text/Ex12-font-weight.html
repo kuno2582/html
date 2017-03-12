@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<!-- 
+font-weight
+ - 같은 글꼴형태에 있는 다른 글골에 비해 두껍거나 얇게 표시
+ - "100~900"까지의 지정된 숫자를 100단위로 설정 가능하며
+   숫자가 높을 수록 더 진하게 표시됩니다.
+ - font-weight:bolder, font-weight:lighter는
+  상대적인 값으로 bolder보다 더 진하게라는 의미가 아니라
+  상위 요소보다 더 진하게 또는 더 흐르게 표시하라는 의미
+  
+100~900	
+normal		기본값
+			글꼴의 두께는 400
+			
+bold		진하게 표시
+			글꼴의 두께는 700
+			<b>태그와 동일
+			
+bolder		상위 요소에서 상속된 두께보다 두껍게 지정
+			600이상은 똑같이 표현
+lighter		상위 요소에서 상속된 두께보다 얇게 지정
+			500이하는 똑같이 표현
+ -->
+<style type="text/css">
+p {
+	font-weight: normal;
+}
+
+h2 {
+	font-weight: 500;
+}
+
+body {
+	font-weight: 600;
+}
+
+strong{
+	font-weight: bolder;
+	color: red;
+}
+
+.txt_bold {
+	font-weight: bold;
+}
+
+</style> 
+ 
+</head>
+<body>
+	<h2>무슨일이든 시작을 했으면 
+	뿌리를 뽑아야 진정한 영광을 얻을 수 있다. 
+	(프랜시스 드레이드 킹)</h2>
+	
+	<b>나는 존재하는 것만으로도 즐겁다는 것을
+	한시도 잊은 적 없다.(케서린 햅번) </b>
+	
+	<p>나는 존재하는 것만으로도 즐겁다는 것을
+	한시도 잊은 적 없다.(케서린 햅번)</p>
+	
+	<strong>나는 존재하는 것만으로도 즐겁다는 것을
+	한시도 잊은 적 없다.(케서린 햅번)</strong>
+	<br><br>
+	
+	스트레스는 대부분 자기 문제를 
+	과대평가하는 사람들에 의해 발생한다 (마이클 르뵈프)<br>
+	
+	<p class="txt_bold">멈춰선 시계도 하루에 두번은 정확하게 시간이 맞는다.
+	훗날 그 시계도 여러번 성공했다고 자랑 할 수 있다.
+	(에센바하)</p>
+	
+
+</body>
+</html>

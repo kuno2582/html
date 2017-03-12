@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<!-- 
+사각형
+fillRect(x, y, width, height)	색이 칠해진 사각형
+strokeRect(x, y, width, height)	테두리만 가진 사각형
+clearRect(x, y, width, height)	특정 영역을 지우고 
+								완전히 투명하게 만드는 사각형
+
+window.onload = function(){
+	//실행시킬 자바스크립트 코드
+	//웹 문서가 다 읽어지고 나서(로드되고 난 후) 
+	//실행시킬 js소스를 여기에 넣어 주시면 실행이 됩니다.
+}
+
+ -->
+<script type="text/javascript">
+	//웹페이지 로드시 호출될 콜백 함수를 지정
+	window.onload=function(){
+		
+		var canvas = document.getElementById('canvas');
+		
+		//
+		if(canvas.getContext){
+			
+			var ctx  = canvas.getContext('2d');
+			
+			ctx.rect(10, 30, 80, 100);
+			ctx.stroke();
+			
+			ctx.strokeRect(10, 200, 150, 100);
+			
+		
+			ctx.fillStyle='rgb(200, 0, 0)';
+			ctx.fillRect(200, 200, 100, 100);
+			
+			
+		}else{
+			alert('브라우저가  canvas를 지원하지 않습니다.');
+		}
+		
+	};
+
+</script>
+</head>
+<body>
+	<canvas id="canvas" width="500" height="300">
+		canvas를 지원하지 않는 브라우저입니다.
+	</canvas>
+</body>
+</html>

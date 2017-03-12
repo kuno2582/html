@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>글자간격</title>
+<!-- 
+letter-spacing / word-spacing
+ - 글자 간격 조절 / 단어 간격을 조절
+ - 간격은 "&nbsp;"로 표시
+ 
+normal		웹브라우저에 의존하도록 지정
+			기본값 (0.25em)
+initial		디폴트값
+              
+ -->
+<style type="text/css">
+h3.ls-em1m {
+	letter-spacing: -1em
+}
+h3.ls-em1 {
+	letter-spacing: 1em;
+}
+h3.ls-em2 {
+	letter-spacing: 2em;
+}
+h3.ls-em3 {
+	letter-spacing: 3em;
+}
+h3.ws-em1m{
+	word-spacing: -1em;
+}
+h3.ws-em1 {
+	word-spacing: 1em;
+}
+h3.ws-em2{
+	word-spacing: 2em;
+}
+h3.ws-em3 {
+	workd-spacing: 3em;
+}
+
+</style> 
+ 
+</head>
+<body>
+	<h3>기본값 글자 간격</h3>
+	<h3 class="ls-em1m">-1em 글자 간격</h3>
+	<h3 class="ls-em1">1em 글자 간격</h3>
+	<h3 class="ls-em2">2em 글자 간격</h3>
+	<h3 class="ls-em3">3em 글자 간격</h3>
+	
+	<hr>
+	
+	<h3>기본값 단어 간격</h3>
+	<h3 class="ws-em1m">-1em 단어 간격</h3>
+	<h3 class="ws-em1">1em 단어 간격</h3>
+	<h3 class="ws-em2">2em 단어 간격</h3>
+	<h3 class="ws-em3">3em 단어 간격</h3>
+</body>
+</html>

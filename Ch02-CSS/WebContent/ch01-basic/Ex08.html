@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>문서내 지정형</title>
+<!-- 
+
+CSS 지정방식 (CSS의 위치에 따른 사용 방법)
+ - 태그 내부 삽입형 (In-line style)
+-> - 문서내 지정형 (Embedding style)
+ - 외부 경로 삽입형 (link style)
+
+
+문서내 지정형(Embedding style)
+ - 내부 스타일 시트(Internal style sheet)라고도 합니다.
+ - HTML문서안에서 별도 영역으로 스타일을 정의하며
+   <head></head>사이에 스타일을 정의합니다.
+ - HTML문서마다 스타일을 지정해 주어야 합니다. 
+ - 한 문서에만 스타일을 적용할 때 간단하고 편하게 스타일 지정할 수 있습니다.
+   (동일한 서식을 적용)
+ -->
+<style type="text/css">
+h1 {
+	color:green;
+}
+
+span {
+	font-size: 30pt;
+}
+
+</style> 
+</head>
+<body>
+	<h1>페이지 내 스타일(임베딩 스타일)</h1>
+	<span>안녕하세요~~~~</span>
+	<br>
+	<h1>h1에 스타일이 적용됩니다.</h1>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<!-- 
+table-layout 속성
+- 테이블의 각종 태그에 대한 너비 설정
+- 테이블, 셀, 행, 칸들을 배치하는 데 사용
+
+auto	자동 테이블 지정, 컨텐츠의 길이에 따라 컬럼의 너비 지정
+
+fixed	고정 테이블 지정
+ -->
+ 
+<style type="text/css">
+table {
+	border: 3px solid grey;
+	width: 100%;
+	/* table-layout: auto; */
+	table-layout: fixed;
+}
+
+table * {
+	border: 3px solid grey;
+}
+
+caption {
+	border:none;
+	caption-side: top;
+}
+
+
+</style> 
+</head>
+<body>
+	<table>
+		<caption>3x3테이블</caption>
+		<tr>
+			<th scope="row">제목 제목 제목 제목제목 제목제목 제목제목 제목제목 제목</th>
+			<!-- <th>제목</th> -->
+			<td>셀</td>
+			<td>셀</td>
+		</tr>
+		<tr>
+			<th scope="row">제목</th>
+			<td>셀</td>
+			<td>셀</td>
+		</tr>
+		<tr>
+			<th scope="row">제목</th>
+			<td>셀</td>
+			<td>셀</td>
+		</tr>
+	
+	</table>
+</body>
+</html>

@@ -1,0 +1,376 @@
+package com.versus.dao;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.sql.Timestamp;
+import java.util.ArrayList;
+
+import com.versus.dto.InputMemberInfoDto;
+import com.versus.dto.MatchDto;
+import com.versus.dto.SignUpCheckIdDto;
+import com.versus.dto.TeamDto;
+
+public class Dao {
+
+	public int loginCheck(String requestId, String requestPw){
+		
+		//3306은 Mysql포트번호, mytest는 DB명
+		String URL = "jdbc:mysql://localhost:3306/versus?useUnicode=true&characterEncoding=euc-kr";	
+		String USER = "root";							//계정 id, APMSETUP은 기본적으로 root
+		String PASS="apmsetup";						//마찬가지로 APMSETUP은 기본적으로 apmsetup
+
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		ResultSet resultSet = null;
+		
+		int loginResult = 0;	//존재하는 아이디가 없을 때, 디폴트값
+
+		try{	
+			Class.forName("com.mysql.jdbc.Driver");		//mysql을 사용
+			connection = DriverManager.getConnection(URL, USER, PASS);		//아이디, 비밀번호, 주소를 넣고 연결
+			
+			String query = "SELECT * FROM member_info where ID=?";
+			preparedStatement = connection.prepareStatement(query);
+			preparedStatement.setString(1, requestId);
+			resultSet = preparedStatement.executeQuery();
+			
+			if(resultSet.next()){
+				String password = resultSet.getString("PASSWORD");
+
+				if(!(password.equals(requestPw))){
+					loginResult = 1;	//비밀번호가 다를 때
+					System.out.println("비밀번호가 다릅니다");
+				}else{
+					loginResult = 2;	//로그인 성공
+					System.out.println("로그인 성공!");
+				}
+				
+			}
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			try{
+				if(resultSet!=null)resultSet.close();
+				if(preparedStatement!=null)preparedStatement.close();
+				if(connection!=null)connection.close();
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+			
+		}
+		
+		return loginResult;
+		
+	}//loginCheck()
+	
+	public InputMemberInfoDto inputMemberInfo(String requestId){
+		
+		String URL = "jdbc:mysql://localhost:3306/versus?useUnicode=true&characterEncoding=euc-kr";	//3306은 Mysql포트번호, mytest는 DB명
+		String USER = "root";							//계정 id, APMSETUP은 기본적으로 root
+		String PASS="apmsetup";						//마찬가지로 APMSETUP은 기본적으로 apmsetup
+
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		ResultSet resultSet = null;
+		
+		InputMemberInfoDto dto = null;
+		
+		try{	
+			Class.forName("com.mysql.jdbc.Driver");		//mysql을 사용
+			connection = DriverManager.getConnection(URL, USER, PASS);		//아이디, 비밀번호, 주소를 넣고 연결
+			
+			String query = "SELECT * FROM member_info where ID=?";
+			preparedStatement = connection.prepareStatement(query);
+			preparedStatement.setString(1, requestId);
+			resultSet = preparedStatement.executeQuery();
+			
+			if(resultSet.next()){
+				
+				String id = resultSet.getString("ID");
+				String nickName = resultSet.getString("NICKNAME");
+				String region = resultSet.getString("REGION");
+				int team_code = resultSet.getInt("TEAM_CODE");
+				Boolean leader = resultSet.getBoolean("leader");
+				Boolean second_leader = resultSet.getBoolean("second_leader");
+				
+				dto = new InputMemberInfoDto(id, nickName, region, team_code, leader, second_leader);
+
+			}
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			try{
+				if(resultSet!=null)resultSet.close();
+				if(preparedStatement!=null)preparedStatement.close();
+				if(connection!=null)connection.close();
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+			
+		}
+		
+		return dto;
+		
+	}//InputMemberInfoDto
+	
+	public ArrayList<SignUpCheckIdDto> signUpCheckId(){
+		
+		String URL = "jdbc:mysql://localhost:3306/versus?useUnicode=true&characterEncoding=euc-kr";		
+		String USER = "root";							
+		String PASS="apmsetup";					
+
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		ResultSet resultSet = null;
+		
+		ArrayList<SignUpCheckIdDto> dtos = new ArrayList<SignUpCheckIdDto>();
+		
+		try{	
+			Class.forName("com.mysql.jdbc.Driver");	
+			connection = DriverManager.getConnection(URL, USER, PASS);
+			
+			String query = "SELECT * FROM member_info";
+			preparedStatement = connection.prepareStatement(query);
+			resultSet = preparedStatement.executeQuery();
+			
+			while(resultSet.next()){
+				
+				String id = resultSet.getString("ID");
+				SignUpCheckIdDto dto = new SignUpCheckIdDto(id);
+				dtos.add(dto);
+				System.out.println(id);
+			}
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			try{
+				if(resultSet!=null)resultSet.close();
+				if(preparedStatement!=null)preparedStatement.close();
+				if(connection!=null)connection.close();
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+			
+		}
+		return dtos;
+	}	//signUpCheckId
+	
+	public ArrayList<TeamDto> signUpCheckTeam(){
+		
+		String URL = "jdbc:mysql://localhost:3306/versus?useUnicode=true&characterEncoding=euc-kr";		
+		String USER = "root";							
+		String PASS="apmsetup";					
+
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		ResultSet resultSet = null;
+		
+		ArrayList<TeamDto> dtos = new ArrayList<TeamDto>();
+		
+		try{	
+			Class.forName("com.mysql.jdbc.Driver");	
+			connection = DriverManager.getConnection(URL, USER, PASS);
+			
+			String query = "SELECT * FROM team_info";
+			preparedStatement = connection.prepareStatement(query);
+			resultSet = preparedStatement.executeQuery();
+			
+			while(resultSet.next()){
+				
+				String team_name = resultSet.getString("TEAM_NAME");
+				int team_code = resultSet.getInt("TEAM_CODE");
+				TeamDto dto = new TeamDto(team_code,team_name);
+				dtos.add(dto);
+			}
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			try{
+				if(resultSet!=null)resultSet.close();
+				if(preparedStatement!=null)preparedStatement.close();
+				if(connection!=null)connection.close();
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+			
+		}
+		return dtos;
+	}//signUpCheckTeam
+	
+	public String signUp(String ID, String Password, String Region, String Email, int team_code){
+		
+		String URL = "jdbc:mysql://localhost:3306/versus?useUnicode=true&characterEncoding=euc-kr";		
+		String USER = "root";							
+		String PASS="apmsetup";		
+
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		
+		String result;
+		
+		try{
+			
+			Class.forName("com.mysql.jdbc.Driver");	
+			connection = DriverManager.getConnection(URL, USER, PASS);
+			String query = "SET NAMES euckr";
+			Statement stat = connection.createStatement();
+			stat.executeQuery(query);
+			
+			query = "INSERT INTO member_info(ID, PASSWORD, REGION, MAIL, TEAM_CODE) VALUES (?, ?, ?, ?, ?)";
+			preparedStatement = connection.prepareStatement(query);
+			preparedStatement.setString(1, ID);	//쿼리문 ? 내용
+			preparedStatement.setString(2, Password);
+			preparedStatement.setString(3, Region);
+			preparedStatement.setString(4, Email);
+			preparedStatement.setInt(5, team_code);
+			preparedStatement.executeUpdate();
+			result = "성공";
+			
+		}catch(Exception e){
+			e.printStackTrace();
+			result="실패";
+		}finally{
+			try{
+				if(preparedStatement!=null)preparedStatement.close();
+				if(connection!=null)connection.close();
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+		}
+		return result;
+	}
+	
+	public void makeTeam(String team_name, String leader_id, String team_phone, String team_region){
+		
+		String URL = "jdbc:mysql://localhost:3306/versus?useUnicode=true&characterEncoding=euc-kr";		
+		String USER = "root";							
+		String PASS="apmsetup";		
+
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		
+		try{
+			
+			Class.forName("com.mysql.jdbc.Driver");	
+			connection = DriverManager.getConnection(URL, USER, PASS);
+			String query = "SET NAMES euckr";
+			Statement stat = connection.createStatement();
+			stat.executeQuery(query);
+			
+			query = "INSERT INTO team_info(TEAM_NAME, LEADER_ID, PHONE, REGION) VALUES (?, ?, ?, ?)";
+			preparedStatement = connection.prepareStatement(query);
+			preparedStatement.setString(1, team_name);	//쿼리문 ? 내용
+			preparedStatement.setString(2, leader_id);
+			preparedStatement.setString(3, team_phone);
+			preparedStatement.setString(4, team_region);
+			preparedStatement.executeUpdate();
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			try{
+				if(preparedStatement!=null)preparedStatement.close();
+				if(connection!=null)connection.close();
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+		}
+		
+	}//makeTeam()
+	
+	public void makeMatch(int teamCode, String match_place, Timestamp match_date, String nickName, String match_phone, 
+			String match_uniform, int shower, int parking, int neon, int whistle, String match_more){
+		
+		String URL = "jdbc:mysql://localhost:3306/versus?useUnicode=true&characterEncoding=euc-kr";		
+		String USER = "root";							
+		String PASS="apmsetup";		
+
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		
+		try{
+			
+			Class.forName("com.mysql.jdbc.Driver");	
+			connection = DriverManager.getConnection(URL, USER, PASS);
+			String query = "SET NAMES euckr";
+			Statement stat = connection.createStatement();
+			stat.executeQuery(query);
+			
+			query = "INSERT INTO match_info(TEAM_CODE, MATCH_REGION, MATCH_DATE, MATCH_LEADER_NICKNAME,"
+					+ " MATCH_PHONE, UNIFORM, SHOWER, PARKING, NEON, WHISTLE, MORE_INFO) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+			preparedStatement = connection.prepareStatement(query);
+			preparedStatement.setInt(1, teamCode);	//쿼리문 ? 내용
+			preparedStatement.setString(2, match_place);
+			preparedStatement.setTimestamp(3, match_date);
+			preparedStatement.setString(4, nickName);
+			preparedStatement.setString(5, match_phone);
+			preparedStatement.setString(6, match_uniform);
+			preparedStatement.setInt(7, shower);
+			preparedStatement.setInt(8, parking);
+			preparedStatement.setInt(9, neon);
+			preparedStatement.setInt(10, whistle);
+			preparedStatement.setString(11, match_more);
+			preparedStatement.executeUpdate();
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			try{
+				if(preparedStatement!=null)preparedStatement.close();
+				if(connection!=null)connection.close();
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+		}
+	}//makeMatch()
+	
+	public ArrayList<MatchDto> searchMatch(String region, Timestamp match_date1, Timestamp match_date2){
+		
+		ArrayList<MatchDto> dtos = new ArrayList<MatchDto>();
+		
+		String URL = "jdbc:mysql://localhost:3306/versus?useUnicode=true&characterEncoding=euc-kr";		
+		String USER = "root";							
+		String PASS="apmsetup";		
+
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		ResultSet resultSet = null;
+		
+		try{
+			Class.forName("com.mysql.jdbc.Driver");	
+			connection = DriverManager.getConnection(URL, USER, PASS);
+			String query = "SET NAMES euckr";
+			Statement stat = connection.createStatement();
+			stat.executeQuery(query);
+			
+			query = "INSERT INTO match_info(TEAM_CODE, MATCH_REGION, MATCH_DATE, MATCH_LEADER_NICKNAME,"
+					+ " MATCH_PHONE, UNIFORM, SHOWER, PARKING, NEON, WHISTLE, MORE_INFO) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+			preparedStatement = connection.prepareStatement(query);
+			preparedStatement.setInt(1, teamCode);	//쿼리문 ? 내용
+			preparedStatement.setString(2, match_place);
+			preparedStatement.setTimestamp(3, match_date);
+			
+			preparedStatement.executeUpdate();
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			try{
+				if(resultSet!=null)resultSet.close();
+				if(preparedStatement!=null)preparedStatement.close();
+				if(connection!=null)connection.close();
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+		}
+		
+		return dtos;
+	}
+}

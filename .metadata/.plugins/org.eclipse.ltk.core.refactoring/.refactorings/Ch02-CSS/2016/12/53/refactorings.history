@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Ch02-CSS/WebContent/ch02-selector/Ex12-이웃선택자.html&apos; to &apos;Ex12-neighbor.html&apos;" description="Rename resource &apos;Ex12-이웃선택자.html&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="WebContent/ch02-selector/Ex12-이웃선택자.html" name="Ex12-neighbor.html" stamp="1483089117160" updateReferences="true"/>
+</session>

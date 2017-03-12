@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>text-indent</title>
+<!-- 
+text-indent: 값
+ - 텍스트의 첫번째 행을 들여쓰기나 내여쓰기로 설정할 때 사용
+ - 내어쓰기 경우 음수 값 지정
+ 
+길이			고정된 길이로 지정
+백분율 		포함된 블록의 너비를 기준으로 지정
+
+ -->
+<style type="text/css">
+.txt_in {
+	text-indent: 3em;
+}
+.txt_out {
+	text-indent: -3em;
+}
+body {
+	font-size: 18pt;
+}
+
+</style> 
+</head>
+<body>
+	<p>기본 문장입니다.</p>
+	<p class="txt_in">들여쓰기한 문장입니다.</p>
+	<p class="txt_out">내어쓰기한 문장입니다.</p>
+
+</body>
+</html>

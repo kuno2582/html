@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<!--
+웹 스토리지(Web Storage)
+ - Client Side Database
+ - 데이터가 서버가 아닌 각 사용자의 브라우저에 저장하는 방식 
+ - 간단한 데이터를 사용자의 컴퓨터나 기기의 로컬에 
+ 저장하는 방법을 표준으로 정의한 것입니다.
+ - key-value형식으로 저장됩니다.
+ - localstorage, sessionstorage
+ 
+ 
+ 로컬 스토리지(Local Storage)
+ - 세션 스토리지와 달리
+ - 로컬 스토리지를 사용하게되면 브라우저를 통해 사용자의 컴퓨터에 있는 데이터를
+ 지속적으로 저장하고 사용할 수 있습니다.
+ - 브라우저를 통해 사용자 컴퓨터의 로컬스토리지에 데이저를 저장하고
+  다시 같은 사이트에 접속했을 때 로컬스토리지에 저장된 데이터를 모두 사용할 수
+  있게 해주는 방법입니다.
+ - 브라우저가 종료된 후에도 다시 같은 사이트에 접속해서 데이터를 사용할 수 있습니다.
+ 
+ 
+Local Storage 접근
+도메인이 다르면 서로의 local storage에 접근할 수 없습니다.
+
+DAUM =>X NAVER
+
+DAUM =>O DAUM
+
+Local Storage 메소드
+length					저장된 변수의 갯수를 반환 메소드
+setItem(key, value)		키, 값을 로컬 스토리지에 저장하는 메소드
+getItem(key)			키와 연관된 값을 반환하는 메소드
+removeItem(key)			키, 값을 로컬스토리지에서 삭제하는 메소드
+clear()					모든 키와 값을 삭제하는 메소드
+ -->
+<script type="text/javascript">
+	function clickCounter(){
+		if( typeof(Storage) !== "undefined" ){
+			
+			if(localStorage.clickcount){
+				
+				localStorage.clickcount = 
+					Number(localStorage.clickcount) + 1
+			}else{
+				localStorage.clickcount = 1;
+			}
+			
+			document.getElementById("result").innerHTML 
+				= "당신은" + localStorage.clickcount 
+				+ "번 클릭하였습니다.";
+			
+			
+		}else{
+			document.getElementById("result").innerHTML 
+				="웹 스토리지를 지원하지 않습니다.";
+		}
+		
+		
+	}
+
+</script> 
+</head>
+<body>
+	<p>
+		<button type="button" onclick="clickCounter()">Click Me!!!</button>
+	</p>
+	<div id="result"></div>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+	window.onload=function(){
+		var canvas = document.getElementById('canvas');
+		
+		if(canvas.getContext){
+			
+			var ctx = canvas.getContext('2d');
+			
+			ctx.beginPath();
+			
+			ctx.moveTo(50, 50);
+			ctx.lineTo(150, 50);
+			ctx.lineTo(50, 150);
+			
+			ctx.closePath();
+			ctx.fill();
+			
+			ctx.beginPath();
+			ctx.moveTo(80, 80);
+			ctx.lineTo(200, 100);
+			ctx.lineTo(100, 200);
+			ctx.closePath();
+			ctx.strokeStyle='rgb(200, 0, 0)';
+			
+			ctx.stroke();
+			
+			
+		}else{
+			alert("브라우저가 canvas를 지원하지 않습니다!");
+		}
+		
+	};
+
+</script>
+
+</head>
+<body>
+	<canvas id="canvas" width="500" height="300">
+		canvas를 지원하지 않는 브라우저입니다.
+	</canvas>
+
+</body>
+</html>

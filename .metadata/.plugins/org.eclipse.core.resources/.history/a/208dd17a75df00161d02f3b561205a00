@@ -1,0 +1,39 @@
+package com.versus.command;
+
+import java.sql.Timestamp;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class SearchCommand implements Command {
+
+	@Override
+	public void execute(HttpServletRequest request, HttpServletResponse response) {
+		
+		String region = "";
+		region += request.getParameter("region1") + " ";
+		region += request.getParameter("region2") + " ";
+		String search_month = request.getParameter("search_month");
+		String search_day = request.getParameter("search_day");
+		String time1 = request.getParameter("time1");
+		String time2 = request.getParameter("time2");
+		
+		Timestamp match_date = null;
+		Timestamp match_date2 = null;
+		try {
+			String date1 = "2017-" + search_month + "-" + search_day + " " + time1 + ":00:00.0";
+			String date2 = "2017-" + search_month + "-" + search_day + " " + time2 + ":00:00.0";
+			DateFormat formatter;
+			formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.S");
+			Date date = (Date)formatter.parse(date1);
+			match_date = new Timestamp(date.getTime());
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+	}
+
+}

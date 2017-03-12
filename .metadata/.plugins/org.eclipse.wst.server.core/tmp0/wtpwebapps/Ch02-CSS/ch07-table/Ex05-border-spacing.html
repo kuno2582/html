@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<!-- 
+
+border-spacing
+- 인접한 셀 테두리들의 간격 지정
+ -->
+<style type="text/css">
+table {
+	border: 3px solid grey;
+	border: outset 10pt;
+	border-collapse: separate;
+	border-spacing: 20pt;
+}
+
+table * {
+	border: 3px solid grey;
+}
+
+td {
+	border: inset 10pt;
+}
+
+caption {
+	border: none;
+}
+
+</style> 
+</head>
+<body>
+<table>
+		<caption>3x3테이블</caption>
+		<tr>
+			<th scope="row">제목</th>
+			<td>셀</td>
+			<td>셀</td>
+		</tr>
+		<tr>
+			<th scope="row">제목</th>
+			<td>셀</td>
+			<td>셀</td>
+		</tr>
+		<tr>
+			<th scope="row">제목</th>
+			<td>셀</td>
+			<td>셀</td>
+		</tr>
+	
+	</table>
+
+</body>
+</html>

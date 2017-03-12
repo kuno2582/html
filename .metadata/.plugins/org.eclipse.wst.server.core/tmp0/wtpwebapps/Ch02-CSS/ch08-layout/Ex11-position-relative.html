@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<!-- 
+상대좌표
+- 현재 자기 위치에서 지정된 상대값 만큼 이동시키는 것
+- 원래 위치가 표시될 위치가 기준점이된다는 것 명심(static)
+
+ -->
+<style type="text/css">
+h3 {
+	text-align: center;
+}
+
+.position_left{
+	position: relative;
+	left: -100px;
+}
+
+.position_right{
+	position: relative;
+	left: +100px;
+}
+
+</style> 
+ 
+</head>
+<body>
+	<h3>원래 위치</h3>
+	<h3 class="position_left">원래 위치</h3>
+	<h3 class="position_right">원래 위치</h3>
+</body>
+</html>

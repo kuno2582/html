@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<!-- 
+font 프로퍼티 값
+caption			캡션으로 쓰이는 글꼴(버튼, 드롭다운 등)
+icon			아이콘의 제목에 쓰이는 글꼴
+menu			메뉴에 쓰이는 글꼴
+				(메뉴 리스트, 드롭다운 메뉴 등)
+message-box		대화 상자에 쓰이는 글꼴
+small-caption	작은 캡션으로 쓰이는 글꼴
+status-bar		상태바에 쓰이는 글꼴
+ -->
+<style type="text/css">
+.fa {
+	font: 18pt sans-serif;
+}
+
+.fb {
+	font: 50% sans-serif;
+}
+
+.fc {
+	font: bold italic large palatino serif;
+}
+
+.fd {
+	font: normal small-caps 120% fantasy;
+}
+
+button { /* font-size/line-height 글꼴, 글꼴 */
+	font: 300 italic 1.3em/1.7em "fb armada" 
+		sans-serif; 
+}
+
+button p{
+	font: menu;
+}
+
+button p em{
+	font: bolder;
+}
+
+</style> 
+</head>
+<body>
+<p>생각하는 대로 살지 않으면 사는 대로 생각하게 된다.
+(스콧 니어링)</p>
+<p class="fa">오늘 무엇을 하느냐가 중요하다. 
+내 인생의 하루를 그것과 바꾸고 있으니까.</p>
+<p class="fb">무엇인가 하고 싶은 사람은 방법을 찾아내고,
+아무것도 하기 싫은 사람은 구실을 찾아낸다. (아라비아 속담)</p>
+<p class="fc">삶이란 자신에 대해 어떻게 알고 있느냐에
+따라 달라진다. (c.팔맨)</p>
+<p class="fd">당신에게 주어진 시간에 무엇을 할 것인지
+결정할 수 있는 사람은 오직 당신뿐이다.</p>
+<hr>
+<p style="font:caption">font:caption</p>
+<p style="font:icon">font:icon</p>
+<p style="font:menu">font:menu</p>
+<p style="font:message-box">font:message-box</p>
+<p style="font:small-caption">font:small-caption</p>
+<p style="font:status-bar">font:status-bar</p>
+<hr>
+<button>폰트 프로퍼티</button>
+<button>
+	<p>폰트 프로퍼티</p>
+</button>
+<button>
+	<p>
+		<em>폰트 프로퍼티</em>
+	</p>
+</button>
+
+</body>
+</html>

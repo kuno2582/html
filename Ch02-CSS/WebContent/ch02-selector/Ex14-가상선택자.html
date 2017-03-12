@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>가상 선택자</title>
+<!-- 
+가상 클래스 선택자(추상 클래스 선택자)
+ - 태그, 아이명, 클래스명 뒤 :(콜론)을 붙여 이벤트명을 지정해 줍니다.
+ - :이벤트를 붙이면 특정 이벤트마다 적용할 CSS스타일을 사용할 수 있습니다.
+
+:hover 가상선택자
+태그:hover를 붙이면 
+해당 태그에 마우스 포인터가 올라가면 적용될 CSS를 정의할 수 있습니다.
+
+ -->
+<style type="text/css">
+.box_a {
+	background-color: blue;
+	color: white;
+}
+.box_a:hover {
+	background-color: red;
+}
+
+div#box_b span:hover{
+	background-color: aqua;
+	color: chocholate;
+}
+
+</style> 
+</head>
+<body>
+	<div class="box_a">마우스를 오려보세요</div>
+	<br>
+	<div id="box_b">
+		<span>span태그 안에서만 적용됩니다.</span>
+		span태그 밖에는 적용되지 않습니다.
+	</div>
+	<br>
+	<span>span태그 안의 문자열입니다.</span>span태그 밖의 문자열입니다.
+
+</body>
+</html>

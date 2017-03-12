@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<!-- 
+<output>
+ - 스크립트에 의해 수행된 '계산의 결과값'을 나타낼 때 사용하는 태그
+ - <output>태그를 사용해도 화면에는 다르게 표시되지 않습니다.
+ - 태그로 묶은 부분이 일반 텍스트가 아닌 계산의 결과값이라는 것을 
+   브라우저에게 정확하게 인식시키는 용도가 있습니다.
+   
+
+for		계산에 사용되는 요소들 ID지정
+name	엘리먼트의 이름을 지정
+ -->
+</head>
+<body>
+	<p>슬라이드를 움직여보세요</p>
+	<form oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+		0<input type="range" id="a" value="50">100 +
+		<input type="number" id="b" value="50"> =
+		<output name="x" for="a b"></output>
+	</form>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="http://code.google.com/apis/maps/documentation/javascript/examples/default.css">
+<!-- <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script> -->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDi1h-cwRaYA_IbP0h5NKNOPJem4iBn9qg"></script>
+<script type="text/javascript">
+	function initLocation(){
+		var myloc;
+		
+		if(navigator.geolocation){
+			myloc = navigator.geolocation;
+			
+			myLocation(myloc);
+			
+		}else{
+			document.getElementById('disp').innerHTML 
+				='위치정보를 지원하지 않습니다.';
+		}
+	}
+	
+	function myLocation(myloc){
+		
+		myloc.getCurrentPosition(function(position){
+			var lat = position.coords.latitude;
+			var lon = position.coords.longitude;
+			
+			console.log('위도: ' + lat + '\t경도: ' + lon);
+			
+			
+			var initLoc = new google.maps.LatLng(lat, lon);
+			
+			var map = new google.maps.Map(
+						
+				document.getElementById('map_canvas'),
+				{
+					zoom: 16,
+					//mapTypeId:google.maps.MapTypeId.ROADMAP
+					//mapTypeId:google.maps.MapTypeId.SATELLITE
+					mapTypeId:google.maps.MapTypeId.HYBRID
+				}
+			
+			);
+			
+			//지도의 중앙에 현재 위치 표시
+			map.setCenter(initLoc);
+			
+		});
+		
+		
+	}
+	
+	window.onload=initLocation();
+
+
+
+</script>
+</head>
+<body>
+	<h2 id="disp">구글맵 보기</h2>
+	<div id="map_canvas" style="width:100%; height:100%"></div>
+
+</body>
+</html>

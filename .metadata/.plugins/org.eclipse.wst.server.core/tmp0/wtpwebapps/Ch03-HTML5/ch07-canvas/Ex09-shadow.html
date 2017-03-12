@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<!-- 
+
+shadowOffsetX	객체로부터 그림자가 x축 방향으로 얼마나 떨어져 있는지를 지정
+				기본값 0, 음수이면 왼쪽에 그림자가 생깁니다.
+shadowOffsetY	객체로부터 그림자가 y축 방향으로 얼마나 떨어져 있느지를 지정
+				기본값 0, 음수이면 위쪽에 그림자가 생깁니다.
+shadowBlur		그림자가 얼마나 흐릿한가를 지정
+				기본값 0
+shadowColor		그림자 색상을 지정
+				기본값은 완전히 투명한 검정색
+ -->
+<script type="text/javascript">
+	window.onload=function(){
+		var canvas = document.getElementById('canvas');
+		
+		if(canvas.getContext){
+			var ctx = canvas.getContext('2d');
+			
+			ctx.shadowOffsetX = 10;
+			ctx.shadowOffsetY = 10;
+			ctx.shadowBlur = 10;
+			ctx.shadowColor="#cccccc";
+			ctx.fillRect(10, 10, 100, 100);
+			
+			
+		}else{
+			alert('canvas를 지원하지 않는 브라우저입니다.');
+		}
+		
+	};
+
+</script>
+ 
+</head>
+<body>
+	<canvas id="canvas" width="500" height="300">
+		브라우저가 canvas를 지원하지 않습니다.
+	</canvas>
+
+</body>
+</html>

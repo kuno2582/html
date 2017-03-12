@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<!-- 
+선
+- path를 통해서 선 작업(path시작과 path끝 사이에서 작업)
+- beginPath(), closePath() 생략 가능
+
+선그리기 단계
+path 지정		beginPath()
+시작점, 끝점 지정	moveTo(), lineTo(), cloasPath()
+경로 테두리 표시	stroke()
+
+ -->
+<script type="text/javascript">
+	window.onload=function(){
+		var canvas = document.getElementById('canvas');
+		
+		if(canvas.getContext){
+			
+			var ctx = canvas.getContext('2d');
+			
+			ctx.beginPath();
+			
+			ctx.moveTo(50, 50);
+			ctx.lineTo(80, 80);
+			
+			ctx.moveTo(140, 80);
+			ctx.lineTo(170, 50);
+			
+			ctx.moveTo(60, 150);
+			ctx.lineTo(170, 150);
+			
+			ctx.closePath();
+			
+			ctx.stroke();
+			
+			
+		}else{
+			alert('브라우저가 canvas를 지원하지 않습니다!');
+		}
+		
+		
+	};
+</script> 
+ 
+</head>
+<body>
+	<canvas id="canvas" width="500" height="300">
+		canvas를 지원하지 않는 브라우저입니다.
+	</canvas>
+
+</body>
+</html>

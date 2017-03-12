@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<!-- 
+position 속성
+- 웹 문서 안의 요소들의 위치를 자유자재로 배치할 수 있게 해주는 속성
+- position속성은 단독으로 쓰이기보다는 left, right, top, bottom속성과 
+  함께 쓰이며 텍스트나 이미지등 여러 요소들을 원하는 위치에 배치할 수 있습니다.
+
+static		기본값
+			위치정보를 임의로 설정 해 줄 수 없습니다.
+			요소들이 문서의 흐름에 맞춰 배치할 때 사용합니다.
+
+absolute	절대위치
+			원하는 위치를 지정해서 그 위치에 배치할 때 사용
+			문서 좌측 상단을 기준으로 위치정보를 설정할 수 있으며
+			스크롤시 이동합니다.
+
+relative	상대위치
+			이전 요소에 자연스럽게 연결하여서 배치해 줄 때 사용
+			static 위치 사용시 있던 위치를 기준으로 이동하게 됩니다.
+			
+
+fixed		위치 고정
+			스크롤과 상관없이 항상 문서 최 좌측상단을 기준으로 
+			좌표가 설정됩니다.
+			지정한 위치에 고정하여 배치되기 때문에 해당 요소가 
+			화면에서 잘릴수 있습니다.
+			
+inherit		부모 요소의 속성값을 상속
+
+ -->
+<style type="text/css">
+.position1 {
+	position: static;
+	background: lightgreen;
+}
+
+.position2 {
+	position: relative;
+	left: 20px;
+	top: 10px;
+	bakcground: lightpink;
+}
+
+.position3 {
+	position: static;
+	background: lightcyan;
+}
+
+.position4 {
+	position: relative;
+	left: 50px;
+	top: 20px;
+	background: lightblue;
+}
+
+</style>
+</head>
+<body>
+	<div class="position1">첫번재 박스</div>
+	<div class="position2">두번째 박스</div>
+	<div class="position3">세번째 박스</div>
+	<div class="position4">네번째 박스</div>
+</body>
+</html>

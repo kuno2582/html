@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<!-- 
+웹 워커(Web Worker)
+ - 자바스크립트의 처리를 백그라운드에서 실행하도록 하는 기능
+ - 브라우저가 OS레벨의 스레드를 생성하여 브라우저에 부담을 주지 않고
+   백그라운드에서 빠르게 스크립트 연산을 할수 있게 해주는 역할을 합니다.
+
+ -->
+</head>
+<body>
+	<p>Count Number: <output id="result"></output> </p>
+	<button onClick="startWorker()">Start Worker</button>
+	<button onClick="stopWorker()">Stop Worker</button>
+	
+	<script type="text/javascript">
+		var w;
+		
+		function startWorker(){
+			//undefined : 변수는 선언되었지만 초기화하지 않았을 때
+			if( typeof(Worker) != "undefined" ){
+				
+				if( typeof(w) == "undefined" ){
+					w = new Worker("myworker.js");
+				}
+				
+				//웹 워커가 작업결과를 돌려받을때 수행할 함수
+				w.onmessage = function(event){
+					document.getElementById("result").innerHTML 
+						= event.data;
+				};
+				
+			}else{
+				document.getElementById("result").innerHTML 
+					= "브라우저가 웹워커를 지원하지 않습니다.";
+			}
+			
+			
+		}
+		
+		function stopWorker(){
+			w.terminate();
+			w = undefined;
+		}
+	
+	
+	</script>
+	
+</body>
+</html>

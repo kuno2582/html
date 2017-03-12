@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<!-- 
+z-index
+ - 요소를 쌓는 순서를 정할 때 사용하는 속성
+ - 수평이나 수직으로의 이동도 설정할 수 있습니다.
+ - 한요소에서 다른 요소로 쌓는 z축으로도 가능
+ - 값이 작을 수록 아래에 쌓이고, 큰 값은 위로 쌓이게 됩니다.
+ - 값을 명시하지 않으면 기본값 1로 설정이 되어 집니다.
+ -->
+<style type="text/css">
+img {
+	width: 300px;
+}
+
+.index1{
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	z-index: 1;
+}
+
+.index2{
+	position: absolute;
+	left: 50px;
+	top: 50px;
+	z-index: 2;
+}
+
+.index3{
+	position: absolute;
+	left: 100px;
+	top: 100px;
+	z-index: 3;
+}
+
+.index4{
+	positon: absolute;
+	left: 150px;
+	top: 150px;
+	z-index: 4;
+}
+
+.index5{
+	position: absolute;
+	left: 200px;
+	top: 200px;
+	z-index: 5;
+}
+.index6{
+	position: absolute;
+	left: 250px;
+	top: 250px;
+	z-index: 6;
+}
+
+.index7{
+	position: absolute;
+	left: 300px;
+	top: 300px;
+	z-index: 7;
+}
+
+</style> 
+ 
+</head>
+<body>
+	<img class="index1" src="./images/pill01.jpg">
+	<img class="index2" src="./images/pill02.jpg">
+	<img class="index3" src="./images/pill03.jpg">
+	<img class="index4" src="./images/pill04.jpg">
+	<img class="index5" src="./images/pill05.jpg">
+	<img class="index6" src="./images/pill06.jpg">
+	<img class="index7" src="./images/pill07.jpg">
+
+</body>
+</html>

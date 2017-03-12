@@ -1,0 +1,116 @@
+
+$(window).load(function() {
+	
+	function fixBanBtnPadding(){
+		var banheight = $('#ban').height();
+		banheight += 20;
+		$('.banner-bottom').css('padding-top',banheight);
+	}
+	
+	$('#find_button').click(function(){
+		$('.banner-bottom-login').slideToggle();
+		setTimeout(function(){
+			fixBanBtnPadding();
+		},500);
+	});
+	
+	var lastScroll=1;	//스크롤에 따른 검색창 보이고 숨기기
+	$(window).scroll(function(event){
+		var st = $(this).scrollTop();
+		if(st>lastScroll){
+			$('.banner-bottom-login').slideUp();
+			setTimeout(function(){
+				fixBanBtnPadding();
+			},500);
+		}else if(st<=lastScroll){
+			$('.banner-bottom-login').slideDown();
+			setTimeout(function(){
+				fixBanBtnPadding();
+			},500);
+		}
+		
+		/* lastScroll = st; */
+	});
+	
+	$('.bottom-status-left').click(function(){
+		history.back();
+	});
+	
+	$('.popup-with-zoom-anim').magnificPopup({
+		type : 'inline',
+		fixedContentPos : false,
+		fixedBgPos : true,
+		overflowY : 'auto',
+		closeBtnInside : true,
+		preloader : false,
+		midClick : true,
+		removalDelay : 300,
+		mainClass : 'my-mfp-zoom-in'	
+	});
+	
+	fixBanBtnPadding();
+	
+	$(window).resize(function(){
+		fixBanBtnPadding();
+	});
+	
+	$('.information').click(function(){
+		//다음지도 표현
+		var mapContainer = document.getElementById('teamdata_map'), // 지도를 표시할 div 
+		mapOption = { 
+    		center: new daum.maps.LatLng(37.430805, 127.137263), // 지도의 중심좌표
+    		level: 3 // 지도의 확대 레벨
+			  };
+
+		var map = new daum.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+		// 마커가 표시될 위치입니다 
+		var markerPosition  = new daum.maps.LatLng(37.430805, 127.137263); 
+
+		// 마커를 생성합니다
+		var marker = new daum.maps.Marker({
+		    position: markerPosition
+		});
+
+		// 마커가 지도 위에 표시되도록 설정합니다
+		marker.setMap(map);
+	});
+
+	$(".btn-nav").on("click tap",function() {
+		$(".nav-container").toggleClass(
+				"showNav hideNav")
+				.removeClass("hidden");
+		$(this).toggleClass("animated");
+	});
+	
+	$(".nav-container").mouseleave(function(){					
+			$(".nav-container").toggleClass("showNav hideNav");
+			$(".btn-nav").toggleClass("animated");
+	});
+	
+	$("#commentParentSubmit").click(function(event){
+		var pText = $("#commentParentText");
+		if($.trim(pText.val()) == ""){
+			alert("내용을 입력하세요");
+			pText.focus();
+			return;
+		}
+		
+		var commentParentText = '<tr id="r1" name="commentParentCode">'+
+		'<td></td><td colspan=1>'+pText.val().replace(/\n/g, "<br>")+'</p>' + '</td>'+'</tr>';
+		
+		if($('#commentTable').contents().size() == 0 ){
+			$('#commentTable').append(commentParentText);
+		}else{
+			$('#commentTable tr:last').after(commentParentText);
+		}
+		
+		$("#commentParentText").val("");
+	});
+
+	//지역별 검색옵션 이벤트
+	$('#choice_region2').on("change", function(){
+		alert($(this).val());
+	});
+	
+});

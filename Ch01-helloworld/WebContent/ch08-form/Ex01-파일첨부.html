@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<p>첨부파일 버튼</p>
+<!-- 
+파일(File Form)
+ - 게시판등 파일을 첨부할 때 해당 파일의 위치를 찾기위한 
+   "찾아보기"버튼을 제공합니다.
+ - type="file"속성에 file이라는 값만 지정하면 파일을 업로드할 수 있는 
+   버튼이 바로 만들어 집니다.
+ - 파일 첨부 기능이 있는 폼을 만들때는 반드시
+  <form>태그안에 enctype속성 multipart/form-data로 지정해 주어야 합니다.
+   
+ --> 
+<form name="" method="" action="" enctype="multipart/form-data">
+	<input type="file" name="filename">
+</form>
+
+<p>파일 첨부</p>
+<form action="" enctype="multipart/form-data">
+	Select a file: <input type="file" name="img">
+					<input type="submit" value="제출">
+</form>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<!--
+caption-side
+캡션(테이블 제목)위치 설정
+
+top		: 위쪽에 캡션 위치(기본값)
+bottom 	: 아래쪽에 캡션 위치
+ -->
+ 
+<style type="text/css">
+table {
+	border: 3px solid grey;
+}
+
+table *{
+	border: 3px solid grey;
+}
+
+caption {
+	border: none;
+	caption-side: bottom;
+	width: auto;
+	text-align: center;
+	
+}
+
+</style>
+</head>
+<body>
+	<table>
+		<caption>3x3테이블</caption>
+		<tr>
+			<th scope="row">제목</th>
+			<td>셀</td>
+			<td>셀</td>
+		</tr>
+		<tr>
+			<th scope="row">제목</th>
+			<td>셀</td>
+			<td>셀</td>
+		</tr>
+		<tr>
+			<th scope="row">제목</th>
+			<td>셀</td>
+			<td>셀</td>
+		</tr>
+	
+	</table>
+
+</body>
+</html>

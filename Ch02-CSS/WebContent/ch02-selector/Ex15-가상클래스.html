@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>가상 클래스</title>
+<!-- 
+:link		방문 안한 링크
+:visited	방문한 링크
+:active		링크를 누를 때
+:hover		링크에 마우스 올릴 때
+:focus		요소가 포커스 될때
+:first-child	요소의 첫번째 자식을 호출
+:first-line		문단의 첫번째 줄에 적용(블록레벨 요소에만 적용)
+:first-letter	블록요소의 첫번째 줄의 첫번째 문자 선택
+:before			요소의 내용 앞에 추가시킬 태그를 지정	
+:after			요소의 내용 뒤에 추가시킬 태그를 지정		
+
+ -->
+<style type="text/css">
+a:link {
+	text-decoration:none;
+	color:rgb(255, 102, 255);
+} 
+
+a:visited {
+	text-decoration:none;
+	color:rgb(255, 155, 155);
+}
+
+a:active {
+	text-decoration:none;
+	color:rgb(0, 0, 255);
+}
+
+a:hover {
+	border-bottom:1px solid rgb(255, 0, 0);
+	background-color:skyblue;
+}
+
+</style>
+</head>
+<body>
+	<a href="http://www.google.com">구글</a><br>
+	<a href="http://www.yahoo.com">야후</a><br>
+	<a href="http://www.bing.com">빙</a>
+
+</body>
+</html>

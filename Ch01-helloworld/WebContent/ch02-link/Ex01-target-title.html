@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>링크 태그</title>
+<!-- 
+링크(페이지 연결)
+- 링크를 만들기 위해 <a> 태그를 사용
+- 앵커(anchor)
+
+<a></a>
+href	기본적으로 href속성을 가집니다.
+		마우스 클릭할 때 이동할 페이지 주소
+title	링크의 이름을 지정
+target	링크가 걸린 페이지를 어떻게 오픈할 것인지를 결정
+id		페이지의 특정 영역에 이름을 지정
+class	선언된 클래스를 호출
+
+<a href="경로명/파일명.html">라벨(문자 or 그림)</a>
+ -->
+</head>
+<body>
+<p><a href="http://www.google.com">구글 웹사이트</a>로 이동</p>
+<p><a href="http://codedragon.tistory.com/hacking.html"> 
+국민은행 인터넷 뱅킹 사이트</a>로 이동</p>
+
+<!-- 
+링크의 페이즈를 타켓으로 지정
+
+target="_blank"	새창
+target="_self"	현재창(기본값)
+ -->
+ 
+ <p><a href="http://www.daum.net" target="_blank">
+ 다음 포털로 이동</a></p>
+ <p>오늘 영화 뭐 보지? 
+ <a href="http://www.imdb.com" target="_self">영화정보 알아보기</a> </p>
+ 
+ <!-- 
+ 풍선 도움말(링크에 대한 설명)
+ - 링크가 걸린 곳에 마우스 오버하면 나타나는 풍선 도움말입니다.
+ - 링크에 대한 설명을 작성
+<a href="" title="제발 클릭해 주세요"></a> 
+  -->
+ <p><a href="http://codedragon.tistory.com" target="_blank"> 
+ 저의 블로그입니다.</a>링크를 클릭해 주세요</p> 
+ 
+  <p><a href="http://codedragon.tistory.com" target="_blank"
+  title="링크를 클릭해 주세요"> 
+ 저의 블로그입니다.</a></p> 
+  
+</body>
+</html>

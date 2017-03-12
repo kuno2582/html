@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>텍스트 스타일 적용</title>
+<!-- 
+text-decoration
+ - 텍스트에 밑줄이나 취소선, 윗줄 표시할 수 있는 속성
+ - 텍스트 링크의 밑줄을 없앨 때 사용
+ - text-decoration속성이 블록레벨 요소에 적용된다면 
+    하위체계에도 모두 적용됩니다.
+    
+text-decoration: 값
+
+none			형태없음
+underline		밑줄 표시
+overline		윗줄 표시
+line-through	취소선 표시
+initial    		디폴트값으로 설정
+ -->
+<style type="text/css">
+.txt_underline {
+	text-decoration: underline;
+}
+.txt_overline {
+	text-decoration: overline;
+}
+.txt_linethrough {
+	text-decoration: line-through;
+}
+.txt_none {
+	text-decoration: none;
+}
+</style> 
+</head>
+<body>
+	<h3 class="txt_underline">텍스트 밑줄</h3>
+	<h3 class="txt_overline">텍스트 윗줄</h3>
+	<h3 class="txt_linethrough">텍스트 취소선</h3>
+	<p style="text-decoration:line-through;">텍스트를 가로지는 선</p>
+	<h3 class="txt_none">텍스트 기본값</h3>
+
+</body>
+</html>

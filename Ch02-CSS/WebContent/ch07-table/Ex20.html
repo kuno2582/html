@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+table.type1 {
+	width: 98%;
+	margin: 0 auto;
+	text-align: right;
+	border-collapse: collpase;
+}
+
+.type1 th, .type1 td {
+	padding: 5px 10px;
+}
+
+.type1 caption {
+	font-weight: 700;
+	font-size: 20px;
+	padding: 5px;
+	color: #1BA6B2;
+	text-align: left;
+	margin-bottom: 5px;
+}
+
+.type1 thead th {
+	background: #84b1f6;
+	color: #ffffff;
+	text-align: center;
+	border-right: 1px solid #ffff;
+}
+
+.type1 tbody th{
+	text-align: left;
+	width: 12%;
+}
+
+.type1 tbody td.date1{
+	text-align: center;
+	width: 8%;
+}
+
+.type1 tbody td.desc {
+	text-align: left;
+	width: 35%
+}
+
+.type1 tbody tr.odd{
+	background: #f9f9f9;
+}
+
+.type1 tbody tr.odd th{
+	background: #f2f2f2;
+}
+
+.type1 tbody tr:hover{
+	background: #f3f5bb;
+}
+.type1 tbody tr:hover th{
+	background: #f2f684;
+	color: #1BA6B2;
+}
+
+</style>
+</head>
+<body>
+	<table class="type1">
+	<caption>2016년 10월 가계부</caption>
+	<thead>
+		<tr>
+			<th scope="col">분류</th>
+			<th scope="col">날짜</th>
+			<th scope="col">내용</th>
+			<th scope="col">수입</th>
+			<th scope="col">지출</th>
+			<th scope="col">합계</th>
+		</tr>
+	</thead>
+	<tfoot>
+		<tr>
+			<th scope="row">총합계</th>
+			<td colspan="3">235,670원</td>
+			<td>243,670원</td>
+			<td>2,000원</td>
+		</tr>
+	</tfoot>
+	<tbody>
+		<tr class="odd">
+			<th scope="row">기타</th>
+			<td class="date1">10/01</td>
+			<td class="desc">이전잔액-이전달에서 넘어옴</td>
+			<td>40,000원</td>
+			<td></td>
+			<td>40,000원</td>
+		</tr>
+		<tr>
+			<th scope="row">교통비</th>
+			<td class="date1">10/07</td>
+			<td  class="desc">BMW 충전(버스, 메트로, 워크)</td>
+			<td>3,000원</td>
+			<td></td>
+			<td>37,000원</td>
+		</tr>
+		<tr class="odd">
+			<th scope="row">식비</th>
+			<td class="date1">10/12</td>
+			<td  class="desc">점심 - 육쌈</td>
+			<td></td>
+			<td>8,000</td>
+			<td>29,000원</td>
+		</tr>
+		<tr>
+			<th scope="row">기타</th>
+			<td class="date1">10/19</td>
+			<td class="desc">복권 - 로또 당첨</td>
+			<td>45,670원</td>
+			<td></td>
+			<td>74,670원</td>
+		</tr>
+		<tr class="odd">
+			<th scope="row">유흥비</th>
+			<td class="date1">10/19</td>
+			<td class="desc">PC방 - 오버워치</td>
+			<td></td>
+			<td>16,000</td>
+			<td>58,000원</td>
+		</tr>
+		<tr>
+			<th scope="row">지식/교양</th>
+			<td class="date1">10/21</td>
+			<td class="desc">책구매-소프트웨어 공학</td>
+			<td></td>
+			<td>12,000원</td>
+			<td>46,000원</td>
+		</tr>
+		<tr class="odd">
+			<th scope="row">기타</th>
+			<td class="date1">10/26</td>
+			<td class="desc">출금-인터넷뱅크</td>
+			<td>150,000원</td>
+			<td></td>
+			<td>40,000원</td>
+		</tr>
+		<tr>
+			<th scope="row">유흥비</th>
+			<td class="date1">10/29</td>
+			<td class="desc">회식-소주 앤 맥주</td>
+			<td></td>
+			<td>80,000원</td>
+			<td>40,000원</td>
+		</tr>
+	</tbody>
+	
+	
+	</table>
+
+</body>
+</html>

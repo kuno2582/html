@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<!-- 
+반응형 웹 다지인의 핵심요소
+ - 반응형 웹 디자인의 핵심 요소는 CSS 미디어쿼리입니다.
+ - 미디어쿼리 이외에 CSS 요소를 사용해서 더 유연성 있게 만들 수 있습니다.
+  기본 CSS의 그레디에이션와 섀도우, 타이포그래피, 애니메이션,
+  자바스크립트와 그래픽을 이용해서도 대체해서 할 수 있습니다.
+  
+반응형 스타일 시트
+CSS에서 화면에 나타나는 브라우저의 너비를 이용해서 스타일 다르게 보여주는 방식
+
+
+스마트폰	@media	(max-width:799px)
+테블릿	@media	only screen
+ 
+			and (min-width:800px) and (max-width: 1024px)
+데스크탑	@media only scrren (min-width:1024)
+
+
+모바일과 데스크톱 개발환경
+- 모바일에서는 이미지를 적게 사용하여 무선 인터넷 사용을 최소화 해주어야 합니다.
+- 모바일 디바이스 화면 크기는 매우 다양하기 때문에
+ 데스톱 PC처럼 작업하는 것은 바람직하지 않습니다.
+- 어느 모바일 다비이스로 작업을 할 것인지 기준을 정해 높을 필요가 있습니다.
+ 앞으로  새롭게 디바이스, 브라우저, OS가 출시될때마다 다양해 지고 있습니다.
+
+ -->
+<link href="desktop.css" rel="stylesheet" type="text/css"
+	media="screen and (min-width:900px)">
+
+<link href="mobile.css" rel="stylesheet" type="text/css"
+	media="screen and (max-width:700px)">
+</head>
+<body>
+	<h1>반응형 웹</h1>
+	<div id="pc_view">
+		<h2>데스트톱 PC화면</h2>
+		<p>브라우저의 크기를 900px보다 작게 줄여보세요!</p>
+	</div>
+	<div id="smart_view">
+		<h2>스마트폰 Mobile화면</h2>
+		<p>브라우저의 크기를 700px보다 크게 늘려보세요!</p>
+	</div>
+</body>
+</html>

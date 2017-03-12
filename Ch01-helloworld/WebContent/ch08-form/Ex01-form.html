@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>폼 태그</title>
+<!-- 
+Form(폼)
+- 사용자 정보를 입력받기 위한 틀을 제공해주는 요소
+
+<form>태그
+ - 웹 페이지에서 사용자로부터 정보를 입력 받을 때 사용
+ - 정보를 받아서 처리하기 위해서 사용(웹 프로그래밍에서 중요한 부분)
+ - 사용자로부터 입력을 받아 그 정보를 특정 장소로 전송하는 태그
+ - 서버쪽으로 정보를 전달할 때 사용하는 태그
+
+예)
+회원가입을 하거나 혹은 쇼핑몰에서 주문을 하는 경우
+사용자에게 입력양식 페이지(form)로 제공하고
+사용자 정보를 입력하게 한 다음
+이 정보를 받아서 처리하게 됩니다.
+
+memeber_create.html
+order_create.html
+
+member_confirm.js
+order_confirm.js
+
+
+//--------------------------------------
+
+<form> 구성
+ - <form>태그는 입력양식의 범위를 지정할 뿐 
+    화면상에서는 아무런 내용도 표시되지 않습니다.
+ - <form></form>사이에 텍스트 박스나 체크박스등을 위치시켜주게 됩니다.
+
+
+<form>
+	//텍스트 박스
+	//체크박스
+</form>
+
+
+<form> 태그의 속성
+주요 속성은 method와 action이 있습니다.
+
+method	웹서버와의 통신 방법을 지정
+		post와 get방식 두가지 값 중 하나를 사용할 수 있습니다.
+		
+action	요청하는 컴포넌트 이름 지정
+		입력양식에 입력된 값을 받아서 DB에 저장하는 페이지를 지정하게 됩니다.
+		php나 asp, jsp등과 같은 웹스크립트 언어를 이용해서 제작하게 됩니다.
+		signin.jsp, info.html
+<form method="get" action="member_confirm.js">
+
+</form>
+
+//-----------------------------------------------
+<input>태그
+ - 폼의 종류를 설정
+ - 모든 폼 필드에 공통적으로 사용되는 속성(type, name, value)
+ 
+ type	폼필드의 종류를 지정
+ 		text, password, submit, checkbox, radio....
+ name	폼 필드의 이름을 지정
+ 		name속성의 값은 고유한 값을 가져야 합니다.
+ 		폼이 전송되고 폼을 처리할 때 
+ 		각 폼 필드를 구분하기 위한 용도로 사용되어지기 때문입니다.
+ value	name에 해당하는 값
+ 
+<input>태그
+<input type="폼타입종류" name="식별자명" 속성명="값">
+ -->
+</head>
+<body>
+<p>텍스트 필드(Text Field)</p>
+<!-- 
+텍스트 필드(Text Field)
+ - 한 줄로된 텍스트를 입력할 수 있는 폼
+ - 이름, 주소등 와 같이 텍스트를 입력받을 때 사용
+ 
+size		- 텍스트 필드의 크기를 지정
+			- size속성을 지정하지 않으면 기본값으로 20
+			- 글자 수와는 무관
+			- 입력받을 수 있는 글자수를 제한하려면 maxlength속성을 사용
+
+maxlength	- 텍스트 필드에 입력할 수 있는 글자수의 최대값을 지정
+
+value		- 텍스트 필드에 입력되는 기본값을 지정
+ -->
+ <input type="text" name="member_name"><br><br>
+ 
+ <input type="text" name="member_name1" value="codedragon"><br><br>
+ 
+ 
+ <p>패스워드 필드(Password Field)</p>
+ <!-- 
+ 패스워드 필드(Password Field)
+  - 텍스트 필드와 동일합니다.
+  - 입력되는 값이 *********로 마스킹 처리되어 표시되는 것만 차이가 있습니다.
+  - 비밀번호가 입력된 그대로 노출된다면 이는 보안상 문제가 있습니다. 
+     이를 해결하기 위해 사용하는 필드요소입니다. 
+  -->
+  <input type="password" name="pass">
+  
+  <p>텍스트 에어리어(textarea)</p>
+  <!-- 
+텍스트 에어리어(textarea)
+	- 여러줄에 걸쳐 많은 내용을 입력할 수 있게 해주는 폼 필드
+
+text
+textarea
+
+textarea 속성
+너비와 높이를 지정하기 위해서 rows(너비)와 cols(높이)속성이 사용됩니다.
+ 
+기본 텍스트 지정
+기본으로 들어갈 텍스트는 <textarea></textarea>태그 사이에 작성해두면 
+사용자에게 출력됩니다. 
+  -->
+  <textarea rows="5" cols="30">기본적으로 표시되는 텍스트</textarea>
+  
+  <p>셀렉트 박스(select)</p>
+<!-- 
+셀렉트 박스(select)
+ - 콤보박스(combo box) 또는 pull-down 메뉴
+ - 리스트 형태의 데이터를 사용하며 이 리스트 중 한 항목을 선택할 때 사용
+ - <select>태그와 <option>태그로 구성되어집니다.
+ 
+<option>태그
+ - 텍스트 필드에서 value 속성에 값을 입력하면 기본값이 입력되어져서 표시되지만
+ - <option>태그에서는 선택된 항목의 value값이 전송되어집니다.
+ 
+ -->
+ <select name="position">
+ 	<option value="">직급선택</option>
+ 	<option value="인턴">인턴</option>
+ 	<option value="신입">신입</option>
+ 	<option value="대리" >대리</option>
+ 	<option value="과장">과장</option>
+ 	<option value="차장">차장</option>
+ 	<option value="부장">부장</option>
+ 	<option value="임원">임원</option>
+ 	<option value="사장" selected="selected">사장</option>
+ 	<option value="기타">기타</option>
+ </select>
+ <!-- 
+카테고리 지정하기
+- <optgroup>태그를 사용하여 옵션에 카테고리를 만들 수 있습니다.
+- 대부분의 웹 브라우저에 지원
+- HTML4버전에서 새로 만들어진 태그
+
+  -->
+  <br><br><br>
+  <select name="hobby">
+  	<option value="">취미선택</option>
+  	<option value="독서">독서</option>
+  	<option value="여행">여행</option>
+  	<option value="낚시">낚시</option>
+  	<optgroup label="스포츠">
+	  	<option value="스타크레프트">스타크레프트</option>
+	  	<option value="스노우보드">스노우보드</option>
+	  	<option value="야구">야구</option>
+	  	<option value="골프">골프</option>
+  	</optgroup>
+  	<option value="십자수">십자수</option>
+  	<option value="자전거">자전거</option>
+  	<option value="음악감상">음악감상</option>
+  
+  </select>
+  
+  <p>라디오(Radio Button)</p>
+<!--   
+라디오 버튼(Radio Button)
+ - 나열된 여러 개의 항목중에서 하나만 선택할 수 있는 폼
+ -->  
+ <input type="radio" name="chk_info" value="C">C
+ <input type="radio" name="chk_info" value="HTML">HTML
+ <input type="radio" name="chk_info" value="CSS" 
+ 	checked="checked">CSS
+ <input type="radio" name="chk_info" value="JAVA">JAVA
+ <input type="radio" name="chk_info" value="JAVASCRIPT">JavaScript
+ <input type="radio" name="chk_info" value="Android">Android
+
+<p>체크 박스(Check Box)</p>
+<!-- 
+체크 박스(Check Box)
+- 여러 개를 선택할 수 있는 폼
+
+셀렉트박스(select)	하나만 선택
+라이오버튼(radio)		하나만 선택
+체크박스(check)		여러개 선택
+
+ -->
+ <input type="checkbox" name="chk_info" value="C">C
+ <input type="checkbox" name="chk_info" value="HTML">HTML
+ <input type="checkbox" name="chk_info" value="CSS" 
+ 	checked="checked">CSS
+ <input type="checkbox" name="chk_info" value="JAVA">JAVA
+ <input type="checkbox" name="chk_info" value="JAVASCRIPT">JavaScript
+ <input type="checkbox" name="chk_info" value="Android">Android
+ 
+ 
+ <p>리셋버튼(reset button)</p>
+<!-- 
+리셋버튼(reset button)
+ - Form에 입력한 값을 취소하고 초기화를 시켜줍니다.
+ 
+ --> 
+ <form name="input" method="post" action="">
+ 	<input type="text" name="memberName" maxLength="10">
+ 	<input type="reset" value="초기화">
+ </form>
+ 
+ <p>전송버튼(Submit Button)</p>
+<!--  
+전송버튼(Submit Button)
+- 폼에 입력한 내용을 지정된 페이지로 전송시켜 줍니다.
+- <form>내의 데이터를 전송할 때 사용
+ --> 
+<form name="input" method="post" action="">
+	<input type="text" name="memberName" maxLength="10">
+	<input type="submit" value="제출">
+</form>
+
+<p>이미지버튼(Image Type)</p>
+<!-- 
+이미지버튼(Image Type)
+ - 버튼이 이미지로 출력되며 전송버튼의 역할을 하는 버튼
+ - 전송버튼이 아닌 일반적인 버튼을 이미지로 표시하려면 
+   <img>태그 와 자바스크립트를 이용해서 액션을 지정해야 합니다. 
+ -->
+ <input type="image" width="100" src="submit.jpg">
+ 
+<p>첨부파일 버튼</p>
+<!-- 
+파일(File Form)
+ - 게시판등 파일을 첨부할 때 해당 파일의 위치를 찾기위한 
+   "찾아보기"버튼을 제공합니다.
+ - type="file"속성에 file이라는 값만 지정하면 파일을 업로드할 수 있는 
+   버튼이 바로 만들어 집니다.
+ - 파일 첨부 기능이 있는 폼을 만들때는 반드시
+  <form>태그안에 enctype속성 multipart/form-data로 지정해 주어야 합니다.
+   
+ --> 
+<form name="" method="" action="" enctype="multipart/form-data">
+	<input type="file" name="filename">
+</form>
+
+<p>파일 첨부</p>
+<form action="" enctype="multipart/form-data">
+	Select a file: <input type="file" name="img">
+					<input type="submit" value="제출">
+</form>
+
+<p>히튼 필드(Hidden Field)</p>
+<!-- 
+히튼 필드(Hidden Field)
+ - 사용자가 입력하거나 선택한 정보는 아니지만 폼 전송시 같이 전송해 주어야 하는
+  정보를 담기위한 폼 필드입니다.
+ - 회원가입시 사용자가 입력한 정보외에 현재 사용자의 IP정보도 같이 필요한 경우
+  히든필드에 넣어서 함께 폼 전송시 전달해 줍니다.
+ - 화면에 보여지지는 않지만 웹 프로그래밍 할때 자주 사용되는 폼 필드중 하나
+ --> 
+ <input type="hidden" name="UserIP" 
+ 	value="<?echo $REMOTE_ADDR?>">
+ 	
+<p>레이블 요소(label)</p>
+<!-- 
+레이블 요소(label)
+ - label부분을 클릭하면 input box의 경우에는 자동으로 focus 가 이동하고
+ checkbox, radio button경우 해당 항목이 자동으로 선택되어 집니다.
+ -label의 for속성의 이름과 폼 요소의 id명이 일치하도록 설정하면 됩니다.
+ -->
+ <p>당신이 좋아하는 언어는?</p>
+ <label for="c">C</label>
+ <input type="checkbox" name="checkinfo" id="c">
+ 
+  <label for="HTML">HTML</label>
+ <input type="checkbox" name="checkinfo" id="HTML">
+ 
+ <label for="CSS">CSS</label>
+ <input type="checkbox" name="checkinfo" id="CSS">
+ 
+ <label for="JAVA">JAVA</label>
+ <input type="checkbox" name="checkinfo" id="JAVA">
+ 
+ <label for="JAVASCRIPT">JAVASCRIPT</label>
+ <input type="checkbox" name="checkinfo" id="JAVASCRIPT">
+ 
+ <label for="Android">Android</label>
+ <input type="checkbox" name="checkinfo" id="Android">
+ 
+ <p>자동완성 기능(autocomplete)</p>
+<!--
+자동완성 기능(autocomplete)
+ - 사용자 입력시 자동완성 기능을 제공해 줍니다.  
+ --> 
+ <form action="" autocomplete="on">
+	First name:<input type="text" name="fname"><br>
+	Last name:<input type="text" name="lname"><br>
+	E-mail: <input type="email" name="email"
+	 autocomplete="off"><br>
+	 <input type="submit">
+ </form>
+ 
+</body>
+</html>
+
+
+
+

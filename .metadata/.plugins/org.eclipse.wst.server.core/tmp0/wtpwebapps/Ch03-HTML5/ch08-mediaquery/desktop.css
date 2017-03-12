@@ -1,0 +1,11 @@
+@CHARSET "EUC-KR";
+/* Desktop CSS  */
+body {
+	
+	color:#ff0000;
+}
+
+#smart_view {
+	
+	display: none;
+}

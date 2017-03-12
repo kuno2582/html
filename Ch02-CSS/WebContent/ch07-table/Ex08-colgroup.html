@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<!--
+<colgroup>
+ - 테이블의 그룹 열을 정의할 때 사용
+ - <col>태그를 그룹으로 관리하는 <td>태그의 구조적인 그룹화를 위해서 사용합니다.
+ - <colgroup>요소를 사용해서 2개 이상의 열을 그룹화한 경우 
+   span속성을 사용할 수 있습니다.
+ - span="2"는 2개의 열을 그룹화했음을 의미하며
+   <colgroup>요소의 자식요소로 <col>요소를 사용하여 2개의 열이
+   각각 어떤 의미를 가지는지에 대한 의미를 부여하고 
+   특정 열에 스타일을 지정할수 있게 해 줍니다.
+
+<col>요소
+ - 테이블의 열을 정의할 때 사용
+ -->
+<style type="text/css">
+table {
+	border: 3px solid grey;
+	width: 100%;
+	table-layout:fixed;
+}
+
+table * {
+	border: 3px solid grey;
+}
+
+caption {
+	border: none;
+	caption-side: top;
+	width: auto;
+	text-align: center;
+	font-weight: bold;
+}
+
+</style>
+</head>
+<body>
+	<section>
+		<table>
+		<caption>2016 KBO 리그 순위</caption>
+		<colgroup class="ranking"></colgroup>
+		<colgroup class="team"></colgroup>
+		<colgroup span="2" class="game">
+			<col class="victory">
+			<col class="defeat">
+		</colgroup>
+		<tr>
+			<th>순위</th>
+			<th>팀명</th>
+			<th>승</th>
+			<th>패</th>
+		</tr>
+		<tr>
+			<th>1</th>
+			<th>두산</th>
+			<th>93</th>
+			<th>50</th>
+		</tr>		
+		<tr>
+			<th>2</th>
+			<th>NC</th>
+			<th>83</th>
+			<th>58</th>
+		</tr>
+		<tr>
+			<th>3</th>
+			<th>넥센</th>
+			<th>77</th>
+			<th>66</th>
+		</tr>
+		<tr>
+			<th>4</th>
+			<th>LG</th>
+			<th>71</th>
+			<th>71</th>
+		</tr>
+		
+		</table>
+	</section>
+
+</body>
+</html>

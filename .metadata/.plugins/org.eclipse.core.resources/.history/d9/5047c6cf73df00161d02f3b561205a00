@@ -1,0 +1,19 @@
+package com.versus.command;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class SearchCommand implements Command {
+
+	@Override
+	public void execute(HttpServletRequest request, HttpServletResponse response) {
+		
+		String region1 = request.getParameter("region1");
+		String region2 = request.getParameter("region2");
+		String leader_id = request.getParameter("teamId");
+		String team_phone = request.getParameter("teamPhone");
+		String team_region = request.getParameter("teamRegion");
+		
+	}
+
+}

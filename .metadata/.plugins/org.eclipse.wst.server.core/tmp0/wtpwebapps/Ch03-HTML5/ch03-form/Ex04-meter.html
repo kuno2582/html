@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<!-- 
+<meter>
+- 알려진 범위 내에서 스칼라 측정 또는 소수값을 나타내는데 사용
+- 웹 페이지에 그래픽 형식에 테이터를 표시할 대 유용하게 사용되는 태그
+- <meter>태그는 인터넷 익스클로러와 사파리에서는 실행되지 않습니다.
+
+
+물리적 현상을 양적으로 표현하는 방법
+스칼라(scalar)					벡터(vector)
+수치값만으로 표시할 수 있는 양		크기와 동시에 방향을 갖는 물리량
+넓이, 시간, 온도 등....			변위, 속도, 가속도, 힘 등....
+
+ -->
+<style type="text/css">
+meter.mt_style {
+	width: 500px;
+	height: 25px;
+}
+</style>
+</head>
+<body>
+	<p>meter 태그</p>
+	<meter value="3" min="1" max="10">
+	최대 10, 최소 1범위중 3값 설정</meter>
+	
+	<br><br>
+	<meter value="0.7">70% 설정</meter>
+	
+	<br><br>
+	<meter value="0.8" class="mt_style">크기 변경</meter>
+
+</body>
+</html>

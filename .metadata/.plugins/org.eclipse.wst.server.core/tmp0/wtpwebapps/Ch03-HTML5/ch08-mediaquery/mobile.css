@@ -1,0 +1,9 @@
+@CHARSET "EUC-KR";
+/* Mobile CSS */
+body {
+	color: #4b0082;	
+}
+
+#pc_view {
+	display: none;
+}

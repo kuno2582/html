@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function save(){
+		
+		var text = document.getElementById('text');
+		var name = text.value;
+		
+		localStorage.setItem('name', name);
+	}
+	
+	function load(){
+		var loadedName = localStorage.getItem('name');
+		
+		alert('localStorage 객체에 저장된 이름: ' + loadedName);
+		
+	}
+</script>
+
+</head>
+<body>
+	<input type="text" id="text"><br>
+	<button onclick="save()">저장하기</button>
+	<button onclick="load()">불러오기</button>
+
+</body>
+</html>

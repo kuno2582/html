@@ -1,0 +1,20 @@
+package com.versus.command;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class SearchCommand implements Command {
+
+	@Override
+	public void execute(HttpServletRequest request, HttpServletResponse response) {
+		
+		String region1 = request.getParameter("region1");
+		String region2 = request.getParameter("region2");
+		String search_month = request.getParameter("search_month");
+		String search_day = request.getParameter("search_day");
+		String time1 = request.getParameter("time1");
+		String time2 = request.getParameter("time2");
+		
+	}
+
+}

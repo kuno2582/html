@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<!-- 
+오디오 지원 파일 형식
+브라우저		파일형식
+파이어폭스	ogg, wav, mp3
+오페라		wav, mp3
+사파리		wav, mp3
+크롬 		ogg, mp3
+IE			mp3
+
+<source>
+- 여러 미디어 자원을 지정할 때 사용하는 태그
+- 브라우저별 미디어타입이나 코덱지원에 따라 
+다양한 멀티미디어 파일의 포멧을 지원할 수 있도록 해주는 태그
+- <video>, <audio>
+
+파일 형식		미디어타입
+mp3			audio/mpeg
+ogg			audio/ogg
+wav			audio/wav
+ -->
+</head>
+<body>
+<img src="landscape01.jpg" width="250"><br>
+<audio controls autoplay loop>
+	<source src="audio02.mp3" type="audio/mpeg">
+	<source src="audio02.ogg" type="audio/ogg">
+	<source src="audio02.wav" type="audio/wav">
+</audio>
+
+</body>
+</html>

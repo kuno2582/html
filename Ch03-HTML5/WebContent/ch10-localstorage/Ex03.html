@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<!-- 
+Local Storage 활용
+ - 개인화 서비스에 활용
+ - 환경설정
+ -->
+<script type="text/javascript" 
+	src="http://code.jquery.com/jquery-1.11.1.min.js" ></script>
+<script type="text/javascript">
+	//window.onload(function(){})
+	$(document).ready(function(){
+		load_setting();
+		
+		//이벤트 연결
+		$('form#frm').submit(function(event){
+			
+			event.preventDefault();
+			
+			save_setting();
+			
+		});
+		
+		
+	});
+	
+	//설정 정보 읽기
+	function load_setting(){
+		
+		var bgcolor = localStorage.getItem('bg_color');
+		var textcolor = localStorage.getItem('text_color');
+		var textsize = localStorage.getItem('text_size');
+		
+		$('#bg_color').val(bgcolor);
+		$('#text_color').val(textcolor);
+		$('#text_size').val(textsize);
+		
+		
+		apply_setting()
+		
+	}
+	
+	//설정 정보 저장
+	function save_setting(){
+		localStorage.setItem('bg_color' ,$('#bg_color').val() );
+		localStorage.setItem('text_color' , $('#text_color').val());
+		localStorage.setItem('text_size' , $('#text_size').val() );
+		
+		apply_setting()
+	}
+	
+	//설정 정보 반영
+	function apply_setting(){
+		$('body').css('background', $('#bg_color').val());
+		$('body').css('color', $('#text_color').val());
+		$('body').css('font-size', $('#text_size').val());
+	}
+
+
+</script> 
+</head>
+<body>
+	<h2>환경 설정 값 기억</h2>
+	<form id="frm">
+		<fieldset id="colors">
+		<legend>색상/글자 크기 선택</legend>
+		<ul>
+			<li>
+				<label for="bg_color">배경색</label>
+				<input type="text" name="bg_color" id="bg_color">
+			</li>
+			<li>
+				<label for="text_color">글자색</label>
+				<input type="text" name="text_color" 
+						id="text_color">
+			</li>
+			<li>
+				<label for="text_size">글자크기</label>
+				<select name="text_size" id="text_size">
+					<option value="16px">16px</option>
+					<option value="20px">20px</option>
+					<option value="24px">24px</option>
+				</select>
+			</li>
+		</ul>
+		<input type="submit" value="저장">
+		
+		</fieldset>
+	
+	</form>
+
+</body>
+</html>

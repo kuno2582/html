@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<!-- 
+글꼴 관련 프로퍼티
+글꼴이나, 글자크기, 글자스타일등을 지정
+- font-family (글꼴 종류)
+- font-size(글꼴 크기)
+- font-style(글꼴 스타일)
+- font-variant (글꼴 변형)
+- font-weight(글꼴 두께)
+- @font-face (웹 폰트)
+- text-shadow (그림자 효과)
+
+//------------------------
+font-family (글꼴 종류)
+ - 글꼴을 지정하는 속성
+ - <body>태그를 비롯해 <p>태그나 <hn>태그처럼
+   텍스트를 사용하는 요소들에게 주로 사용하는 속성
+ - 웹 문서에서 글꼴을 지정할 때 한 가지 글골만 지정하기도 하지만
+   지정한 글꼴이 없는 경우를 대비해서 
+   두번째, 세번째 글골까지 지정할 수 있습니다.
+ - font-family 속성은 상속되기 때문에
+   <body>태그에 스타일을 한번 정의해주면 문서 전체에 적용되고
+   문서안의 모든 자식 요소에게 계속해서 같은 글꼴을 사용할 수 있습니다.
+
+속성값으로 글꼴 이름을 입력합니다.
+font-family: "글꼴이름", "글꼴이름", "글꼴이름"
+ -->
+<style type="text/css">
+.blue{
+	font-family: 바탕;
+	color:blue;
+} 
+.under {
+	font-family: 휴먼옛체;
+	letter-spacing: 4px;
+	text-decoration: underline;
+	color: red;
+}
+ 
+</style>
+</head>
+<body>
+<h2 style="font-family:'잘보이는 글꼴','궁서체';">
+궁서체로 표시하기</h2>
+<h3 style="font-family:'잘보이는 글꼴';">
+브라우저의 기본 글꼴로 표시하기</h3>
+
+미래에 <b>희망</b>이 있다면 <br>
+현재에는 <font class="blue">힘</font>이 있다.<br>
+<p class="under">-존 맥스웰-</p>
+
+
+</body>
+</html>

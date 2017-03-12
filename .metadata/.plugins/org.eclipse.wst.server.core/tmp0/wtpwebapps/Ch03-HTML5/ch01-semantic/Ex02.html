@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<!-- 
+시멘틱 요소로 홈페이지의 문서 구조(틀) 잡기
+- 기본태그만으로 문서의 구조를 완성할 수 있습니다.
+- 이것이 HTML5가 가지고 있는 구조화, 표준화의 장점이 됩니다.
+- HTML5태그를 이용해서 문서의 구조를 잡고, 
+  CSS를 이용해서 문서 구조에 디자인을 적용하게 됩니다.
+
+
+<header>
+ - 사이트에 대한 소개 정보나 메인 메뉴, 사이트 로고 등을 포함시킬 때 사용
+ 
+<article>
+ - 컨텐츠의 독립적인 부분을 나타낼 때 사용
+ - 문서 내용이 많을 경우 여러 개의 <article> 요소로 분할 할 수 있습니다.
+ - <article>요소를 중첩해서 사용할 수 있습니다. 
+    중첩된 <article>요소는 바깥쪽의 요소와 연관된 것으로 간주되어집니다.
+    
+<footer>
+ - 웹페이지의 하단을 만들 때 사용
+ - 작성자 정보나 저작권 정보, 관련 문서 링크등 카피라이트 영역을 표현할 때 사용.
+ -->
+<style type="text/css">
+body {
+	font-size: 1em;
+	color: black;
+
+}
+
+header, article, footer {
+	border: 1px solid gray;
+	margin: 5px;
+}
+
+header {
+	background-color: lightgreen;
+	height: 100px;
+}
+
+article {
+	background-color: skyblue;
+	height: 200px;
+}
+
+footer {
+	background-color: #d12d36;
+	height: 100px;
+}
+
+</style>
+</head>
+<body>
+	<header>헤더부분(머리말)</header>
+	<article>컨텐츠(본문)</article>
+	<footer>하단부분(꼬리말)</footer>
+</body>
+</html>

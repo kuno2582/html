@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<!-- 
+행그룹 요소
+<thread>, <tbody>, <tfoot>태그 
+
+<thread>
+- 테이블의 제목 행을 정의할 때 사용
+- 표의 머리말 부분을 표시하는 태그
+- 자식요소로 <tr>요소만 가질 수 있습니다.
+
+<tbody>
+- 테이블의 본문 행을 정의할 때 사용
+- 표의 내용 부분을 표시하는 태그
+- 자식요소로 <tr>요소만 가질 수 있습니다.
+
+<tfoot>
+- 테이블의 푸터 행을 정의할 때 사용
+- 표의 꼬리말 부분을 표시하는 태그
+- 자식요소로 <tr>요소만 가질 수 있습니다.
+ -->
+<style type="text/css">
+table {
+	border: 3px solid grey;
+	width: 100%; 
+	table-layout: fixed;
+}
+
+table * {
+	border: 3px solid grey;
+}
+
+caption {
+	border: none;
+	width: 100%;
+	text-align: center;
+	font-weight: bold;
+}
+td.center {
+	text-align: center;
+}
+
+td.number {
+	text-align: right;
+}
+</style>
+</head>
+<body>
+<section>
+	<table>
+		<caption>메론 탑 파이브(단위: 백만)</caption>
+	
+		<thead>
+			<tr>
+				<th>순위</th>
+				<th>곡명</th>
+				<th>가수</th>
+				<th>좋아요</th>
+			</tr>
+		<thead>
+		<tbody>
+			<tr>
+				<td class="center">1</td>
+				<td>너무너무너무</td>
+				<td>아이오아이(I.O.I)</td>
+				<td class="number">47,953</td>
+			</tr>
+			<tr>
+				<td class="center">2</td>
+				<td>우주를 줄게</td>
+				<td>볼빨간사춘기</td>
+				<td class="number">123,786</td>
+			</tr>
+			<tr>
+				<td class="center">3</td>
+				<td>어떻게 지내</td>
+				<td>Crush</td>
+				<td class="number">48,883</td>
+			</tr>
+			<tr>
+				<td class="center">4</td>
+				<td>내 옆에 그대인걸</td>
+				<td>다비치</td>
+				<td class="number">27,827</td>
+			</tr>
+			<tr>
+				<td class="center">5</td>
+				<td>피 땀 눈물</td>
+				<td>방탄소년단</td>
+				<td class="number">84,438</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="3">좋아요 합계</td>
+				<td class="number">332,887</td>
+			</tr>
+		</tfoot>
+	</table>
+</section>
+
+</body>
+</html>

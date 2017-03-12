@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<!-- 
+
+getCurrentPosition()
+window.navigator.geolocation.getCurrentPostion(
+	successCallback, //위치정보를 얻었을 때(성공) 실행되는 함수
+	errorCallback, //위치정보를 얻지 못했을 때(실패) 실행되는 함수
+	option	//위치정보에 대한 각종 매개변수를 포함하는 자바스크립트 객체 지정
+);
+
+option 항목
+frequency			위치정보를 가져올 시간 간격 단위,
+					밀리세컨드(ms) 1/1000, 기본값 10000
+enableHighAccuracy	위치정보의 정확성을 최상으로 할지 여부 지정
+timeout				기기로부터 위치정보를 가져올 때가지의 최대 대기시간 단위
+maximumAge			위치정보를 캐싱하는 기간을 지정, 단위는 밀리세컨드
+
+
+ -->
+<script type="text/javascript">
+	var watchID;
+	
+	window.onload=function(){
+		
+		if(navigator.geolocation == undefined){
+			alert('이기기에서는 위치정보를 지원하지 않습니다.');
+		}
+		
+		navigator.geolocation.getCurrentPosition(
+				success, fail, {timeout:10000});
+		
+		function success(position){
+			
+// 			var x = document.getElementById('startLat');
+// 			x.innerHTML =
+				
+			document.getElementById('startLat').innerHTML =
+				position.coords.latitude;
+			document.getElementById('startLon').innerHTML =
+				position.coords.longitude;
+			
+		}
+		
+		function fail(error){
+			alert('에러발생 코드: ' + error.code);
+/* 
+			에러코드
+			0	알수 없는 오류
+			1	권한 거부
+			2	위치 추적 실패
+			3	시간 초과
+ */			
+		}
+		
+		
+		watchID = 
+			navigator.geolocation.watchPosition(function(position){
+			
+				var lat = position.coords.latitude;
+				var lon = position.coords.longitude;
+				var acc = position.coords.accuracy;
+				
+				document.getElementById('currentLat').innerHTML = lat;
+				document.getElementById('currentLon').innerHTML = lon;
+				document.getElementById('acc').innerHTML = acc;
+				
+				
+		});
+		
+		var btn = document.getElementById('btn');
+		
+		btn.addEventListener('click', locClear, false);
+		
+		function locClear(){
+			//clearWatch : watchPosition메소드로 위치추적하는 것을
+			// 				해제시키는 역할
+			navigator.geolocation.clearWatch(watchID);
+			alert('위치 추적이 해제되었습니다.');
+		}
+		
+	};
+
+
+
+
+</script>
+</head>
+<body>
+	시작 위치(위도, 경도): <br>
+	<span id="startLat">위도: </span>&deg; <br>
+	<span id="startLon">경도: </span>&deg;
+	<br><br>
+	
+	현재 위치(위도, 경도): <br>
+	<span id="currentLat">위도: </span>&deg;<br>
+	<span id="currentLon">경도: </span>&deg;
+	<br><br>
+	<span id="acc">정확도</span> 미터 정도의 정확도를 보입니다.
+	<br><br>
+	<button id="btn">위치 추적 해제</button>
+	
+
+</body>
+</html>

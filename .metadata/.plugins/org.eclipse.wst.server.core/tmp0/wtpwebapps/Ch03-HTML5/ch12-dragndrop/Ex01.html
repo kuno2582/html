@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<!-- 
+draggable 속성
+ - <img>와 href속성이 있는 <a>요소는 원래 드래그 할수 있는 요소로 규정되어 있습니다.
+ - <img>와 href속성이 있는 <a>요소들 외에 
+   모든 요소들에 draggable 속성을 true로 지정하면 
+   드래그할 수 있는 속성이 부여됩니다.
+ - HTML5에서 새롭게 추가
+ - draggable 속성값으로 true, false값만 가질수 있습니다.
+ 
+ 
+draggable 속성 지정
+ - draggable은 드래그 대상이 웹 어플리케이션안의 요소라면 그 요소에
+   draggable속성을 지정합니다.
+ - draggable 속성이 true설정하면 drag할 수 있는 것이고
+ 				   false설정하면 drag하지 못합니다.
+ - 값을 지정하지 않을 경우에는 기본동작을 그대로 사용하겠다는 의미가 됩니다.
+
+
+이벤트(event)
+- 이벤트는 윈도우 프로그램에서 어떤 특정한 행동이 발생한 그 자체를 의미
+- 사건(객체에 일어난 사건)을 나타내는 객체
+
+
+이벤트 예
+- 메뉴를 선택하는 행위
+- 마우스를 클릭하는 행위
+- 윈도우의 종료 버튼을 마우스로 누르는 행위
+- 윈도우의 크기를 조절하는 행위
+- 등
+ -->
+<style type="text/css">
+	div{
+		width: 110px;
+		height: 110px;
+	}
+
+	div#r{
+		border: 2px solid #f00;
+		float: left;
+	}
+	
+	div#g{
+		border: 2px solid #0f0;
+		float: left;
+	}
+	
+	div#b{
+		border: 2px solid #00f;
+		float: left;
+	}
+	
+	div#y{
+		border: 2px solid #ff0;
+		float: left;
+	}
+
+</style>
+<script type="text/javascript">
+/*
+요소를 드래그할 경우 태그의 속성 draggable="true"로 명시
+img, a 태그 요소는 기본적으로 드래그 기능하기 때문에 
+draggable="true" 생략가능
+
+드래그 앤 드롭 이벤트
+-드래그(Drag)측에서 발생하는 이벤트
+-드롭(Drop)측에서 발생하는 이벤트
+
+드래그(Drag)측에서 발생하는 이벤트
+dragstart	사용자가 요소를 드래그하고자할때 dragstart이벤트 발생
+			이벤트가 발생하면 드래그와 관련된 정보 설정
+drag		마우스가 움직일 때 발생
+dragend		성공적이든 실패했든 드래그가 끝났을 때 발생
+
+
+드롭(Drop)측에서 발생하는 이벤트
+dragenter	드래그되는 요소가 드롭할 요소의 경계 안에 들어왔을 때 발생
+dragover	드래그되는 요소가 드롭할 요소의 경계 안에 있을 때 발생
+dragleave	드래그되는 요소가 드롭할 요소의 경계로 부터 나왔을 때 발생
+drop	드래그되는 요소가 성공적으로 드롭 대상 영역위에 드롭되었을 때 발생
+
+ */	
+	function drag(target, e){
+		e.dataTransfer.setData('good', target.id);
+}
+/* 
+DataTransfer
+- drag & drop API 사용할 수 있게 해주는 객체
+- dataTransfer객체는 drag & drop되는 대상 Data를 담는 역할을 합니다.
+- 첫번째 매개변수는 포멧 문자열을 지정.
+- 첫번재 매개변수에 지정한 포멧과 일치하는 값을 두번째 매개변수로 지정
+- 두번째 매개변수는 문자열만 지정
+ */
+ 
+ function drop(target, e){
+	var id = e.dataTransfer.getData('good');
+	target.appendChild(document.getElementById(id));
+}
+
+</script>
+
+</head>
+<body>
+<div id="r" ondrop="drop(this, event)" 
+				ondragover="return false"></div>
+<div id="g" ondrop="drop(this, event)"
+				ondragover="return false"></div>
+<div id="b" ondrop="drop(this, event)"
+				ondragover="return false"></div>
+<div id="y" ondrop="drop(this, event)"
+				ondragover="return false"></div>
+<img src="images/01image1.png" id="image1" 
+	width="100" height="100" ondragstart="drag(this, event)">
+<img src="images/01image2.png" id="image2"
+	width="100" height="100" ondragstart="drag(this, event)">
+
+</body>
+</html>

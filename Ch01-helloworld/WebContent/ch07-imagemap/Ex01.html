@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>이미지 맵 태그</title>
+<!-- 
+이미지 맵(image map)
+ - 하나의 이미지에 여러 개의 링크를 생성할 수 있게 해 줍니다.
+ - 이미지맵을 사용하면 HTML문서 소스를 보다 간결하게 만들어 줄 수 있습니다.
+ 
+<area>태그
+이미지에 하이퍼링크 영역을 지정하기 위해서 사용합니다.
+
+shape	-이미지맵의 형태를 지정(링크가 걸리는 모양)
+		-rect(사각형)
+		-circle(원형)
+		-poly(다각형)
+
+coords	-좌표값을 지정
+		-이미지의 왼쪽 모서리를 기준으로 
+		 하이퍼링크 영역의 시작과 끝부분의 좌표값을 지정해 줍니다.
+		-시작x, 시작y, 끝x, 끝y
+
+ -->
+</head>
+<body>
+<img src="the-avengers-collection.jpg"
+	usemap="#imgmap20161018112815" 
+	alt="imagemap" border="0">
+
+<map id="imgmap20161018112815" name="imgmap20161018112815">
+	<area shape="rect" alt="" title="" coords="374,736,523,890" href="http://marvel.com/characters/23/hawkeye" target="" />
+	<area shape="rect" alt="" title="" coords="1401,731,1557,899" href="http://marvel.com/characters/6/black_widow" target="" /><!-- Created by Online Image Map Editor (http://www.maschek.hu/imagemap/index) --></map>
+
+</body>
+</html>

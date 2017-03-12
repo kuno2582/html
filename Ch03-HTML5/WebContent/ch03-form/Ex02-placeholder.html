@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<!--
+
+placeholder
+- 힌트 문구를 나태는 속성
+- 힌트는 사용로 부터 정보를 입력받을 때 사용자에게 도움을 주기 위해서 입니다.
+- 보통 아이디나 비밀번호를 입력하는 곳에서 '아이디를 입력하세요"나 
+  입력에 필요한 양식을 힌트 메시지로 표시해 주는 역할을 해줍니다.
+ 
+ -->
+<style type="text/css">
+fieldset {
+	width: 216px;
+}
+
+fieldset ul{
+	list-style: none;
+	padding: 0;
+	margin: 2px;
+}
+
+fieldset ul li{
+	margin: 0 0 9px 0;
+	padding: 0;
+}
+
+fieldset input{
+	width: 200px;
+}
+
+input[type="submit"]{
+	width: 80px;
+	font-family: "맑은 고딕";
+}
+
+</style> 
+ 
+</head>
+<body>
+	<form action="do.jsp" method="post">
+		<fieldset>
+			<legend>새로운 계정 만들기</legend>
+			<ul>
+				<li>
+					<label for="name">이름</label>
+					<input type="text" name="name" id="name"
+						autofocus placeholder="이름을 입력하세요">
+				</li>
+				<li>
+					<label for="email">이메일</label>
+					<input type="email" name="email" id="email"
+					placeholder="userid@domain.com">
+				</li>
+				
+				<li>
+					<label for="password">비밀번호</label>
+					<input type="password" name="password"
+						id="password" autocomplete="off"
+						placeholder="8~16자 사이의 문자">
+				</li>
+				<li>
+					<input type="submit" value="전송">
+				</li>
+			</ul>
+		</fieldset>
+	</form>
+</body>
+</html>

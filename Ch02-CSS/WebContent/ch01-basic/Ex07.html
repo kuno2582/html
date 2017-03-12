@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>태그 내부 삽입형</title>
+<!-- 
+CSS 지정방식 (CSS의 위치에 따른 사용 방법)
+ - 태그 내부 삽입형 (In-line style)
+ - 문서내 지정형 (Embedding style)
+ - 외부 경로 삽입형 (link style)
+ 
+CSS 적용 범위
+In-line style < Embedding style < link style
+
+//---------------------------------
+
+태그 내부 삽입형(In-line style)
+- 기존의 태그 요소안에 직접 style속성을 정의하는 방법
+- HTML태그와 섞어서 스타일을 사용합니다.
+- 태그에 직접 적용하므로 직관적으로 바로 사용이 가능하다는 장점이 있지만
+  내용과 스타일을 분리해서 스타일을 일괄적으로 적용 및 관리하는 
+ CSS의 장점이 사라져 버려 효율적이지 않습니다.
+- 오류수정등
+
+<tag style="프로퍼티1:값;프로터피2:값;"></tag>
+
+ -->
+</head>
+<body>
+기본값 보기:<br>
+	<h1>인라인 스타일</h1>
+	<span>안녕</span><br>
+<br>
+<br>
+스타일 적용:<br>
+	<h1 style="color:red">인라인 스타일</h1>
+	<span style="font-size:15pt">안녕</span>
+	<span style="color:blue;font-size:15pt">안녕</span>
+	<div id="hello" 
+		style="background:#ff9000;color:#ffffff;">HELLO</div>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+  <p>셀렉트 박스(select)</p>
+<!-- 
+셀렉트 박스(select)
+ - 콤보박스(combo box) 또는 pull-down 메뉴
+ - 리스트 형태의 데이터를 사용하며 이 리스트 중 한 항목을 선택할 때 사용
+ - <select>태그와 <option>태그로 구성되어집니다.
+ 
+<option>태그
+ - 텍스트 필드에서 value 속성에 값을 입력하면 기본값이 입력되어져서 표시되지만
+ - <option>태그에서는 선택된 항목의 value값이 전송되어집니다.
+ 
+ -->
+ <select name="position">
+ 	<option value="">직급선택</option>
+ 	<option value="인턴">인턴</option>
+ 	<option value="신입">신입</option>
+ 	<option value="대리" >대리</option>
+ 	<option value="과장">과장</option>
+ 	<option value="차장">차장</option>
+ 	<option value="부장">부장</option>
+ 	<option value="임원">임원</option>
+ 	<option value="사장" selected="selected">사장</option>
+ 	<option value="기타">기타</option>
+ </select>
+ <!-- 
+카테고리 지정하기
+- <optgroup>태그를 사용하여 옵션에 카테고리를 만들 수 있습니다.
+- 대부분의 웹 브라우저에 지원
+- HTML4버전에서 새로 만들어진 태그
+
+  -->
+  <br><br><br>
+  <select name="hobby">
+  	<option value="">취미선택</option>
+  	<option value="독서">독서</option>
+  	<option value="여행">여행</option>
+  	<option value="낚시">낚시</option>
+  	<optgroup label="스포츠">
+	  	<option value="스타크레프트">스타크레프트</option>
+	  	<option value="스노우보드">스노우보드</option>
+	  	<option value="야구">야구</option>
+	  	<option value="골프">골프</option>
+  	</optgroup>
+  	<option value="십자수">십자수</option>
+  	<option value="자전거">자전거</option>
+  	<option value="음악감상">음악감상</option>
+  
+  </select>
+  
+</body>
+</html>

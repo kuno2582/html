@@ -1,0 +1,10 @@
+127.0.0.1 - - [24/Jan/2017:14:55:38 +0900] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [24/Jan/2017:14:55:39 +0900] "GET /Versus/web/style.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [24/Jan/2017:14:55:39 +0900] "GET /Versus/web/css/popuo-box.css HTTP/1.1" 200 7137
+0:0:0:0:0:0:0:1 - - [24/Jan/2017:14:55:40 +0900] "GET /Versus/web/main.jsp HTTP/1.1" 200 19594
+0:0:0:0:0:0:0:1 - - [24/Jan/2017:14:55:40 +0900] "GET /Versus/web/images/matching.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [24/Jan/2017:14:55:40 +0900] "GET /Versus/web/images/login.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [24/Jan/2017:14:55:40 +0900] "GET /Versus/web/images/status.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [24/Jan/2017:14:55:40 +0900] "GET /Versus/web/images/teamInfo.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [24/Jan/2017:14:55:40 +0900] "GET /Versus/web/images/qna.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [24/Jan/2017:14:55:40 +0900] "GET /Versus/web/js/versus.js HTTP/1.1" 304 -

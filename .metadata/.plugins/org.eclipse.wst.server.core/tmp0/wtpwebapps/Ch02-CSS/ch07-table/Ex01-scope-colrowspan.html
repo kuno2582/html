@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<!-- 
+
+scope	해당 셀이 영향을 주는 내용 셀의 범위 지정
+scope="col"	동일한 열에 있는 셀과 연관성이 있는 경우 설정
+			각 열 전체의 속성으로 제목 표시
+
+scope="row"	동일한 행에 있는 셀과 연관성이 있는 경우 설정
+			각 행의 제목 표시
+
+colspan=""		왼쪽에서 오른쪽으로 column을 확장시키는 경우
+				가로칸을 합쳐주는 기능
+
+rowspan=""		위쪽에서 아래쪽으로 row을 확장시키는 경우
+				세로칸을 합쳐주는 기능
+
+<th>
+ - 데이터 테이블의 제목 셀 역할
+ - scope 속성을 지정해서 영향을 주는 셀의 범위를 지정할 수 있습니다.
+ 
+<caption>
+- 테이블의 제목을 정의해 줄 때 사용
+ -->
+</head>
+<body>
+	<section>
+		<!-- <h1>웹 브라우저 점유율</h1> -->
+		<table border="1">
+			<caption><b>웹 브라우저 점유율</b></caption>
+			<tr>
+				<th scope="col">웹브라우저</th>
+				<th scope="col">점유율</th>
+			</tr>
+			<tr>
+				<td>IE10이하</td>
+				<td>59.32%</td>
+			</tr>
+			<tr>
+				<td>IE11</td>
+				<td>30.13%</td>
+			</tr>
+			<tr>
+				<td>Edge</td>
+				<td>0.72%</td>
+			</tr>
+			<tr>
+				<td>크롬</td>
+				<td>6.76%</td>
+			</tr>
+			<tr>
+				<td>합계</td>
+				<td>100%</td>
+			</tr>
+		
+		</table>
+	</section>
+</body>
+</html>

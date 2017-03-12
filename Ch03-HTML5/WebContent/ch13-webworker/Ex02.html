@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+<script type="text/javascript" 
+src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+	
+	var worker = new Worker('webworker.js');
+	
+	$(function(){
+		
+		$('#btnOK').click(function(){
+			worker.postMessage($('#guguDan').val());
+			
+		});
+		
+		worker.onmessage = function(event){
+			
+			$('#result').html(event.data);
+			
+		};
+		
+		worker.onerror = function(event){
+			$('#result').html('에러발생');
+		};
+		
+		
+		$('#btnStop').click(function(){
+			if(worker)
+				worker.terminate();
+		});
+		
+	});
+
+
+</script>
+</head>
+<body>
+	<input type="text" id="guguDan">
+	<input type="button" id="btnOK" value="확인">
+	<input type="button" id="btnStop" value="중지">
+	<br>
+	<div id="result"></div>
+
+</body>
+</html>

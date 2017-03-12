@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<!-- 
+border-style
+- 테두리 선 스타일 지정하는 속성
+- border-top-style, border-bottom-style, 
+  border-left-style, border-right-style프로퍼티를 이용해서
+  위쪽, 오른쪽, 아래쪽, 왼쪽의 테두리선 스타일을 지정할 수 있습니다.
+- 기본값은 none: 스타일시트에서 테두리스타일을 지정하지 않으면 테두리가
+  화면에 보이지 않습니다.
+  
+none		기본값, 0
+			테두리 선이 나타나지 않습니다.
+			
+hidden		외곽선 숨김
+			none과 같은 결과 table태그에서는 표시됩니다.
+			
+solid		실선
+
+double		이중 실선
+			두선 사이의 간격이 border-width값이 됩니다.
+
+groove		선이 안쪽으로 들어간 느낌
+			오목 형태(홈이 파인 듯한 입체감)
+
+ridge		선이 밖으로 튀어나온 느낌
+			블록한 형태
+
+inset		내용이 안으로 들어간 느낌, 테두리 전체가 오목한 형태로 표시
+			border-collapse:separate 값일 경우 전체박스 테두리가 
+			                창에 들어간 것처럼 표시
+			border-collapse:collapse 값일 경우 groove와 동일
+
+outset		내용이 밖으로 나온 느낌, 테두리 전체가 볼록한  형태로 표시
+			border-collapse:separate 값일 경우 전체박스 테두리가
+			            창에서 튀어나온 것 처럼 표시
+			border-collapse:collapse 값일 경우 ridge와 동일
+
+dashed		긴 점선
+
+dotted		짧은 점선
+
+ -->
+<style type="text/css">
+div {
+	border-width: 10px;
+}
+
+.myborder1 {
+	border-top-style:solid;
+	border-bottom-style: dashed;
+	border-left-style: solid;
+	border-right-style: dashed;
+}
+
+.myborder2 {
+	border-top-style: inset;
+	border-bottom-style: inset;
+	border-left-style: inset;
+	border-right-style: inset;
+}
+
+.myborder3 {
+	border-top-style: groove;
+	border-bottom-style: groove;
+	border-left-style: groove;
+	border-right-style: groove;
+}
+
+.myborder4 {
+	border-top-style: outset;
+	border-bottom-style: outset;
+	border-left-style: outset;
+	border-right-style: outset;
+}
+
+.myborder5 {
+	border-top-style: ridge;
+	border-bottom-style: ridge;
+	border-left-style: ridge;
+	border-right-style: ridge;
+}
+
+.myborder6 {
+	border-top-style: dashed;
+	border-bottom-style: dashed;
+	border-left-style: dashed;
+	border-right-style: dashed;
+}
+
+</style> 
+ 
+</head>
+<body>
+	<div class="myborder1">
+		<h2>Self-confidence is 
+			the first requisite to great undertakings.</h2>
+	</div>
+	<br>
+	<div class="myborder2">
+		<h2>Self-confidence is 
+			the first requisite to great undertakings.</h2>
+	</div>
+	<br>
+	<div class="myborder3">
+		<h2>Self-confidence is 
+			the first requisite to great undertakings.</h2>
+	</div>
+	<br>
+	<div class="myborder4">
+		<h2>Self-confidence is 
+			the first requisite to great undertakings.</h2>
+	</div>
+	<br>
+	<div class="myborder5">
+		<h2>Self-confidence is 
+			the first requisite to great undertakings.</h2>
+	</div>
+	<br>
+	<div class="myborder6">
+		<h2>Self-confidence is 
+			the first requisite to great undertakings.</h2>
+	</div>
+
+</body>
+</html>

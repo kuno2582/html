@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>하위선택자</title>
+<!-- 
+하위 선택자(=후손 선택자)
+ - 지정한 후손 태그와 일치하는 모든 태그를 대상으로 합니다.
+ 
+하위 선택자 지정 형식
+상위태그 요소 안에 있는 요소에만 적용이됩니다.
+상위태그 하위태그    
+ -->
+<style type="text/css">
+
+body div {
+	border: 3px solid blue;
+}
+
+</style> 
+</head>
+<body>
+
+	<div>
+		<ul>
+			<li>apple</li>
+			<li>pen</li>
+			<li>pineapple</li>
+			<li>hhhhhh</li>
+		</ul>
+		div 태그
+	</div>
+	<p> 
+		<span>span태그</span>
+	</p>
+
+</body>
+</html>

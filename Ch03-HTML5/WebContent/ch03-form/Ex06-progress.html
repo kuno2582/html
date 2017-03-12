@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<!-- 
+
+<progress>
+- 작업의 진행 상황을 보여줄때 사용하는 태그
+- 브라우저마다 프로그레스바의 색이 다르게 보입니다.
+
+value	작업이 얼마나 진행되었는 그 값을 나태주는 요소
+
+max		작업이 완료되었을 때의 양 나타내는 값	
+ -->
+<style type="text/css">
+progress.pg_style {
+	background-color: #f3f3f3;
+	border: 0;
+	height: 18px;
+	border-radius: 9px;
+}
+
+
+</style> 
+ 
+</head>
+<body>
+	<p>최대값과 현재값 지정한 progress 태그</p>
+	<progress max=100 value=30></progress>
+	<br><br>
+	<progress max="100" value="75"></progress>
+	<br><br>
+	
+	<p>progress태그만 지정</p>
+	<progress></progress>
+	<br><br>
+	
+	<p>스타일 적용한 progress</p>
+	<progress max=100 value=80 class="pg_style"></progress>
+
+</body>
+</html>

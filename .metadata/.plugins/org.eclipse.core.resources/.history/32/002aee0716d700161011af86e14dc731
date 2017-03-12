@@ -1,0 +1,5 @@
+package com.versus.frontcontroller;
+
+public class FrontController extends HttpServlet {
+
+}

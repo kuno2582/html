@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<!-- 
+overflow
+요소의 박스에 내용이 더 많아 범위를 벗어날 때 스크롤바를 표시할지를 지정하는 속성 
+
+scroll		안의 내용의 양에 상관없이 항상 스크롤바를 생기게 합니다.
+
+visible		기본값
+			내용이 흘어넘치는 것처럼 보이게 표시해 줍니다.
+
+auto		내용이 범위를 넘어갔을 때만 스크롤바를 생성합니다.
+
+hidden		내용이 많아도 스크롤바를 생성하지 않습니다.
+
+width/height	가로/세로 크기를 지정
+				퍼센트로도 지정가능
+				height값을 생략하면 내용의 양에 맞게 박스의 세로 길이가
+				자동으로 정해지게 됩니다.
+				둘다 생략할 경우 
+				스크롤바가 정상적으로 만들어지지않을 수도 있습니다. 
+ -->
+<style type="text/css">
+#visible, #hidden, #scroll, #auto{
+	width: 400px;
+	height: 100px;
+	background-color: #ffd9fa;
+	border: 1px solid blue;
+}
+
+#visible {
+	overflow: visible;
+}
+
+#hidden {
+	overflow: hidden;
+}
+
+#scroll {
+	overflow: scroll;
+}
+
+#auto {
+	overflow: auto;
+}
+</style>
+</head>
+<body>
+	<p>overflow: visible</p>
+	<div id="visible">
+		<img src="01img.PNG">	
+	</div>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	
+	<p>overflow: hidden</p>
+	<div id="hidden">
+		<img src="01img.PNG">
+	</div>
+	
+	<br><br>
+	
+	<p>overflow: scroll</p>
+	<div id="scroll">
+		<img src="01img.PNG">
+	</div>
+	
+	<br><br>
+	
+	<p>overflow: auto</p>
+	<div id="auto">
+		<img src="01img.PNG">
+	</div>
+</body>
+</html>

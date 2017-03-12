@@ -1,0 +1,47 @@
+package com.versus.command;
+
+import java.sql.Timestamp;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.versus.dao.Dao;
+
+public class SearchCommand implements Command {
+
+	@Override
+	public void execute(HttpServletRequest request, HttpServletResponse response) {
+		
+		String region = "";
+		region += request.getParameter("region1") + " ";
+		region += request.getParameter("region2") + " ";
+		String search_month = request.getParameter("search_month");
+		String search_day = request.getParameter("search_day");
+		String time1 = request.getParameter("time1");if(time1 == "")time1="0";
+		String time2 = request.getParameter("time2");if(time2 == "")time2="23";
+		
+		Timestamp match_date1 = null;
+		Timestamp match_date2 = null;
+		try {
+			String str_date1 = "2017-" + search_month + "-" + search_day + " " + time1 + ":00:00.0";
+			String str_date2 = "2017-" + search_month + "-" + search_day + " " + time2 + ":00:00.0";
+			DateFormat formatter;
+			formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.S");
+			Date date1 = (Date)formatter.parse(str_date1);
+			Date date2 = (Date)formatter.parse(str_date2);
+			match_date1 = new Timestamp(date1.getTime());
+			match_date2 = new Timestamp(date2.getTime());
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		
+		Dao dao = new Dao();
+		
+		dao.searchMatch(region, match_date1, match_date2);
+	}
+
+}

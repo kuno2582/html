@@ -1,0 +1,47 @@
+@CHARSET "EUC-KR";
+/* Desktop CSS
+ */
+.pg {
+	width: 800px;
+	margin-right: auto;
+	margin-left: auto;
+}
+.head {
+	background-image: url(title.jpg);
+	background-repeat: no-repeat;
+	width: 800px;
+	height: 265px;
+}
+.head h1{
+	display: none;
+}
+
+.entries {
+	float: left;
+	width: 680px;
+}
+
+.sidebar {
+	float: left;
+	width: 70px;
+	text-align: right;
+	padding-left: 1em;
+	margin-left: 1em;
+}
+
+.sidebar {
+	list-style-type: none;
+}
+	
+.foot {
+	
+	background-color: #000840;
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #999;
+	padding: 10px;
+	color: #fff;
+	margin-top: 10px;
+	clear:left;
+	text-align: center;
+}	

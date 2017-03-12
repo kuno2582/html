@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>필드셋 태그</title>
+<!-- 
+<fieldset>
+ - 서로 연관성있는 태그들을 하나로 묶어주는 역할
+ 
+<legend>
+ - 제목을 붙이는 역할
+ - <legend>를 사용하기 위해서는 <fieldset> 태그를 사용해야 합니다.
+ -->
+</head>
+<body>
+
+<b>나의 단골 영화관</b><br>
+<input type="radio" name="chk_info" value="cgv">CGV
+<input type="radio" name="chk_info" value="megabox">MEGABOX
+<input type="radio" name="chk_info" value="lottecinema">Lotte Cinema
+<input type="radio" name="chk_info" value="bravosilver">실버영화관
+<input type="radio" name="chk_info" value="isfx">MULTIPLEX CINEMA
+<input type="radio" name="chk_info" value="torrent">TORRENT
+
+<br><br>
+<fieldset>
+	<legend><b>내가 본 영화 리스트</b></legend>
+	<input type="checkbox" name="chk_movie" value="matrix">매트릭스
+	<input type="checkbox" name="chk_movie" value="residentevil">레지던트이블
+	<input type="checkbox" name="chk_movie" value="socialnetwork">소셜네트워크
+	<input type="checkbox" name="chk_movie" value="piratesofsiliconvalley">실리콘벨리의 신화
+	<input type="checkbox" name="chk_movie" value="internship">인턴십
+	<input type="checkbox" name="chk_movie" value="enermyofstate">에너미오브스테이트
+</fieldset>
+
+</body>
+</html>
